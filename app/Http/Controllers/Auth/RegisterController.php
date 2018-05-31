@@ -48,7 +48,7 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        return Validator::make($data, [ 
+        return Validator::make($data, [
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
         ]);
@@ -65,8 +65,11 @@ class RegisterController extends Controller
       $_id = microtime().rand(0,100000000);
         return User::create([
             'users_id' => $_id,
+            '_from' =>"main",
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'activertion'=>"activated",
+            'subscribtion' => "noo"
         ]);
     }
 }

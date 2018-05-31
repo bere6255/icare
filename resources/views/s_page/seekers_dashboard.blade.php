@@ -1,4 +1,4 @@
 @extends('layouts.icare_app')
 @section('content')
-  @include('s_s_page.subcription_page')
+  @include('s_s_page.seekers_dashboard')
 @endsection

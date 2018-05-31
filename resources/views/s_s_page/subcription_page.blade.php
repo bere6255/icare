@@ -10,7 +10,7 @@
                 <div class="card">
                   <a href="#"><img class="card-img-top" src="/img/01.jpg" ></a>
                   <div class="card-body d-flex flex-column">
-                    <h4><a href="#">Seekers</a></h4>
+                    <h4>Seekers</h4><a href="/seekers_create" class="btn btn-primary">Click here for Seekers</a>
                     <div class="text-muted"></div>
                     <div class="d-flex align-items-center pt-5 mt-auto">
                       <div>
@@ -25,9 +25,9 @@
 
               <div class="col-sm-6 col-xl-6">
                 <div class="card">
-                  <a href="#"><img class="card-img-top" src="/img/14.jpg" ></a>
+                  <img class="card-img-top" src="/img/14.jpg" >
                   <div class="card-body d-flex flex-column">
-                    <h4><a href="#">Providers</a></h4>
+                    <h4>Providers</h4><a class="btn btn-warning" href="/provider_create">Click here to become a Provider</a>
                     <div class="text-muted"></div>
                     <div class="d-flex align-items-center pt-5 mt-auto">
                       <div>

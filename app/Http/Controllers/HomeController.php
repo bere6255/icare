@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Auth;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -25,4 +25,19 @@ class HomeController extends Controller
     {
         return view('home');
     }
+    public function create_seeker(){
+      $user=Auth::user();
+      return view('s_page.pricing');
+      // this is for creation of Seekers
+    }
+
+    public function create_provider(){
+      $user=Auth::user();
+      return $user;
+      // this is for creating provider
+    }
+    public function seekers_dashboard(){
+      return view('s_page.seekers_dashboard');
+    }
+
 }

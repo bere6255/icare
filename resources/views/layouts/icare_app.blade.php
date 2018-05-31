@@ -127,17 +127,14 @@
                   <li class="nav-item">
                     <a href="/home" class="nav-link"><i class="fe fe-home"></i>Dash Board</a>
                   </li>
+                  @if(Auth::user()->subscribtion =="noo")
                   <li class="nav-item dropdown">
-                    <a href="javascript:void(0)" class="nav-link" data-toggle="dropdown"><i class="fe fe-calendar"></i>Doctor</a>
-                    <div class="dropdown-menu dropdown-menu-arrow">
-                      <a href="./maps.html" class="dropdown-item ">male</a>
-                      <a href="./icons.html" class="dropdown-item ">female</a>
-                      <a href="./store.html" class="dropdown-item ">other lisst 1</a>
-                      <a href="./blog.html" class="dropdown-item ">other lisst 2</a>
-                    </div>
+                    <a href="s_doctors" class="nav-link" ><i class="fe fe-calendar"></i>Doctor</a>
+
                   </li>
+                  @endif
                   <li class="nav-item dropdown">
-                    <a href="#" class="nav-link"><i class="fe fe-file"></i>Messages</a>
+                    <a href="s_message" class="nav-link"><i class="fe fe-file"></i>Messages</a>
                   </li>
                 </ul>
               </div>
