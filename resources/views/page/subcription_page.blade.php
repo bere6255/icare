@@ -6,7 +6,6 @@
               </h1>
             </div>
             <div class="row row-cards row-deck">
-
               <div class="col-sm-6 col-xl-6">
                 <div class="card">
                   <a href="#"><img class="card-img-top" src="/img/01.jpg" ></a>
@@ -39,7 +38,6 @@
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
