@@ -5,33 +5,22 @@
                 <h3 class="page-title mb-5">Mail Service</h3>
                 <div>
                   <div class="list-group list-group-transparent mb-0">
-                    <a href="#" class="list-group-item list-group-item-action d-flex align-items-center active">
+                    <a href="/s_message" class="list-group-item list-group-item-action d-flex align-items-center">
                       <span class="icon mr-3"><i class="fe fe-inbox"></i></span>Inbox <span class="ml-auto badge badge-primary">14</span>
                     </a>
-                    <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
-                      <span class="icon mr-3"><i class="fe fe-send"></i></span>Sent Mail
+                    <a href="/s_message/sent" class="list-group-item list-group-item-action d-flex align-items-center">
+                      <span class="icon mr-3"><i class="fe fe-send"></i></span>Sent Mail <span class="ml-auto badge badge-info">5</span>
                     </a>
-                    <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
-                      <span class="icon mr-3"><i class="fe fe-alert-circle"></i></span>Important <span class="ml-auto badge badge-secondary">3</span>
-                    </a>
-                    <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
-                      <span class="icon mr-3"><i class="fe fe-star"></i></span>Starred
-                    </a>
-                    <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
-                      <span class="icon mr-3"><i class="fe fe-file"></i></span>Drafts
-                    </a>
-                    <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
-                      <span class="icon mr-3"><i class="fe fe-tag"></i></span>Tags
-                    </a>
-                    <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
-                      <span class="icon mr-3"><i class="fe fe-trash-2"></i></span>Trash
+                    <a href="/s_message/trash" class="list-group-item list-group-item-action d-flex align-items-center">
+                      <span class="icon mr-3"><i class="fe fe-trash-2"></i></span>Trash <span class="ml-auto badge badge-Danger">50</span>
                     </a>
                   </div>
                   <div class="mt-6">
-                    <a href="#" class="btn btn-secondary btn-block">Compose new Email</a>
+                    <a href="/s_message/compose" class="btn btn-secondary btn-block">Compose new Email</a>
                   </div>
                 </div>
               </div>
+
               <div class="col-md-9">
                 <div class="card">
                   <div class="card-header">
@@ -64,6 +53,10 @@
                   </div>
                 </div>
               </div>
+
+
+
+
             </div>
           </div>
         </div>

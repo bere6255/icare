@@ -25,16 +25,16 @@
       });
     </script>
     <!-- Dashboard Core -->
-    <link href="./assets/css/dashboard.css" rel="stylesheet" />
-    <script src="./assets/js/dashboard.js"></script>
+    <link href="../assets/css/dashboard.css" rel="stylesheet" />
+    <script src="../assets/js/dashboard.js"></script>
     <!-- c3.js Charts Plugin -->
-    <link href="./assets/plugins/charts-c3/plugin.css" rel="stylesheet" />
-    <script src="./assets/plugins/charts-c3/plugin.js"></script>
+    <link href="../assets/plugins/charts-c3/plugin.css" rel="stylesheet" />
+    <script src="../assets/plugins/charts-c3/plugin.js"></script>
     <!-- Google Maps Plugin -->
-    <link href="./assets/plugins/maps-google/plugin.css" rel="stylesheet" />
-    <script src="./assets/plugins/maps-google/plugin.js"></script>
+    <link href="../assets/plugins/maps-google/plugin.css" rel="stylesheet" />
+    <script src="../assets/plugins/maps-google/plugin.js"></script>
     <!-- Input Mask Plugin -->
-    <script src="./assets/plugins/input-mask/plugin.js"></script>
+    <script src="../assets/plugins/input-mask/plugin.js"></script>
   </head>
   <body class="">
     <div class="page">
@@ -129,12 +129,15 @@
                   </li>
                   @if(Auth::user()->subscribtion =="noo")
                   <li class="nav-item dropdown">
-                    <a href="s_doctors" class="nav-link" ><i class="fe fe-calendar"></i>Doctor</a>
+                    <a href="/s_doctors" class="nav-link" ><i class="fe fe-calendar"></i>Doctor</a>
 
                   </li>
                   @endif
                   <li class="nav-item dropdown">
-                    <a href="s_message" class="nav-link"><i class="fe fe-file"></i>Messages</a>
+                    <a href="/s_message" class="nav-link"><i class="fe fe-file"></i>Messages</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a href="/s_prescribtions" class="nav-link"><i class="fe fe-file"></i>Prescriptions</a>
                   </li>
                 </ul>
               </div>
