@@ -2,7 +2,7 @@
           <div class="container">
             <div class="page-header">
               <h1 class="page-title">
-                Chose a subscription Plan
+                STANDARD PLAN
               </h1>
             </div>
             <div class="row">
@@ -10,14 +10,10 @@
                 <div class="card">
                   <div class="card-status bg-red"></div>
                   <div class="card-body text-center">
-                    <div class="card-category">Free</div>
-                    <div class="display-3 my-4">$0</div>
+                    <div class="card-category">1 Day Standard Plan</div>
+                    <div class="display-3 my-4">₦ 1,500</div>
                     <ul class="list-unstyled leading-loose">
-                      <li><strong>3</strong> Users</li>
-                      <li><i class="fe fe-check text-success mr-2" aria-hidden="true"></i> Sharing Tools</li>
-                      <li><i class="fe fe-x text-danger mr-2" aria-hidden="true"></i> Design Tools</li>
-                      <li><i class="fe fe-x text-danger mr-2" aria-hidden="true"></i> Private Messages</li>
-                      <li><i class="fe fe-x text-danger mr-2" aria-hidden="true"></i> Twitter API</li>
+                      <li><i class="fe fe-check text-danger mr-2" aria-hidden="true"></i> 1 day</li>
                     </ul>
                     <div class="text-center mt-6">
                       <a href="#" class="btn btn-danger btn-block btn-pill">Choose plan</a>
@@ -29,14 +25,10 @@
                 <div class="card">
                   <div class="card-status bg-yellow"></div>
                   <div class="card-body text-center">
-                    <div class="card-category">Premium</div>
-                    <div class="display-3 my-4">$49</div>
+                    <div class="card-category">1 Month Standard Plan</div>
+                    <div class="display-3 my-4">₦ 4,000</div>
                     <ul class="list-unstyled leading-loose">
-                      <li><strong>10</strong> Users</li>
-                      <li><i class="fe fe-check text-success mr-2" aria-hidden="true"></i> Sharing Tools</li>
-                      <li><i class="fe fe-check text-success mr-2" aria-hidden="true"></i> Design Tools</li>
-                      <li><i class="fe fe-x text-danger mr-2" aria-hidden="true"></i> Private Messages</li>
-                      <li><i class="fe fe-x text-danger mr-2" aria-hidden="true"></i> Twitter API</li>
+                      <li><i class="fe fe-check text-warning mr-2" aria-hidden="true"></i> 31 day</li>
                     </ul>
                     <div class="text-center mt-6">
                       <a href="#" class="btn btn-yellow btn-block btn-pill">Choose plan</a>
@@ -48,14 +40,10 @@
                 <div class="card">
                   <div class="card-status bg-blue"></div>
                   <div class="card-body text-center">
-                    <div class="card-category">Enterprise</div>
-                    <div class="display-3 my-4">$99</div>
+                    <div class="card-category">6 Months Standard Plan</div>
+                    <div class="display-3 my-4">₦ 24,000</div>
                     <ul class="list-unstyled leading-loose">
-                      <li><strong>100</strong> Users</li>
-                      <li><i class="fe fe-check text-success mr-2" aria-hidden="true"></i> Sharing Tools</li>
-                      <li><i class="fe fe-check text-success mr-2" aria-hidden="true"></i> Design Tools</li>
-                      <li><i class="fe fe-check text-success mr-2" aria-hidden="true"></i> Private Messages</li>
-                      <li><i class="fe fe-x text-danger mr-2" aria-hidden="true"></i> Twitter API</li>
+                      <li><i class="fe fe-check text-primary mr-2" aria-hidden="true"></i> 186 day</li>
                     </ul>
                     <div class="text-center mt-6">
                       <a href="#" class="btn btn-blue btn-block btn-pill">Choose plan</a>
@@ -67,14 +55,10 @@
                 <div class="card">
                   <div class="card-status bg-green"></div>
                   <div class="card-body text-center">
-                    <div class="card-category">Unlimited</div>
-                    <div class="display-3 my-4">$139</div>
+                    <div class="card-category">1 Year Standard Plan</div>
+                    <div class="display-3 my-4">₦ 36,000</div>
                     <ul class="list-unstyled leading-loose">
-                      <li><strong>Unlimited</strong> Users</li>
-                      <li><i class="fe fe-check text-success mr-2" aria-hidden="true"></i> Sharing Tools</li>
-                      <li><i class="fe fe-check text-success mr-2" aria-hidden="true"></i> Design Tools</li>
-                      <li><i class="fe fe-check text-success mr-2" aria-hidden="true"></i> Private Messages</li>
-                      <li><i class="fe fe-check text-success mr-2" aria-hidden="true"></i> Twitter API</li>
+                      <li><i class="fe fe-check text-success mr-2" aria-hidden="true"></i> 365 day</li>
                     </ul>
                     <div class="text-center mt-6">
                       <a href="#" class="btn btn-green btn-block btn-pill">Choose plan</a>
@@ -83,5 +67,74 @@
                 </div>
               </div>
             </div>
+
+            <div class="page-header">
+              <h1 class="page-title">
+                PREMIUM PLAN
+              </h1>
+            </div>
+            <div class="row">
+              <div class="col-3">
+                <div class="card">
+                  <div class="card-status bg-red"></div>
+                  <div class="card-body text-center">
+                    <div class="card-category">1 Day Standard Plan</div>
+                    <div class="display-3 my-4">₦ 2,000</div>
+                    <ul class="list-unstyled leading-loose">
+                      <li><i class="fe fe-check text-danger mr-2" aria-hidden="true"></i> 1 day</li>
+                    </ul>
+                    <div class="text-center mt-6">
+                      <a href="#" class="btn btn-danger btn-block btn-pill">Choose plan</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="card">
+                  <div class="card-status bg-yellow"></div>
+                  <div class="card-body text-center">
+                    <div class="card-category">1 Month Standard Plan</div>
+                    <div class="display-3 my-4">₦ 5,500</div>
+                    <ul class="list-unstyled leading-loose">
+                      <li><i class="fe fe-check text-warning mr-2" aria-hidden="true"></i> 31 day</li>
+                    </ul>
+                    <div class="text-center mt-6">
+                      <a href="#" class="btn btn-yellow btn-block btn-pill">Choose plan</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="card">
+                  <div class="card-status bg-blue"></div>
+                  <div class="card-body text-center">
+                    <div class="card-category">6 Months Standard Plan</div>
+                    <div class="display-3 my-4">₦ 30,000</div>
+                    <ul class="list-unstyled leading-loose">
+                      <li><i class="fe fe-check text-primary mr-2" aria-hidden="true"></i> 186 day</li>
+                    </ul>
+                    <div class="text-center mt-6">
+                      <a href="#" class="btn btn-blue btn-block btn-pill">Choose plan</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="card">
+                  <div class="card-status bg-green"></div>
+                  <div class="card-body text-center">
+                    <div class="card-category">1 Year Standard Plan</div>
+                    <div class="display-3 my-4">₦ 60,000</div>
+                    <ul class="list-unstyled leading-loose">
+                      <li><i class="fe fe-check text-success mr-2" aria-hidden="true"></i> 365 day</li>
+                    </ul>
+                    <div class="text-center mt-6">
+                      <a href="#" class="btn btn-green btn-block btn-pill">Choose plan</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>

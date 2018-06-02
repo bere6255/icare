@@ -33,7 +33,7 @@ class HomeController extends Controller
 
     public function create_provider(){
       $user=Auth::user();
-      return $user;
+      return view('d_page.doc_reg_form');
       // this is for creating provider
     }
     public function seekers_dashboard(){

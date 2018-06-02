@@ -129,7 +129,7 @@
                   </li>
                   @if(Auth::user()->subscribtion =="noo")
                   <li class="nav-item dropdown">
-                    <a href="/s_doctors" class="nav-link" ><i class="fe fe-calendar"></i>Doctor</a>
+                    <a href="/s_doctors" class="nav-link" ><i class="fe fe-calendar"></i>Seekers</a>
 
                   </li>
                   @endif
@@ -140,7 +140,7 @@
                     <a href="/s_prescribtions" class="nav-link"><i class="fe fe-file"></i>Prescriptions</a>
                   </li>
                   <li class="nav-item dropdown">
-                    <a href="#" class="nav-link"><i class="fe fe-file"></i>Fund Account</a>
+                    <a href="/s_prescribtions" class="nav-link"><i class="fe fe-file"></i>Payout</a>
                   </li>
                 </ul>
               </div>

@@ -12,7 +12,7 @@
                       <span class="icon mr-3"><i class="fe fe-send"></i></span>Sent Mail <span class="ml-auto badge badge-info">45</span>
                     </a>
                     <a href="/s_message/trash" class="list-group-item list-group-item-action d-flex align-items-center active">
-                      <span class="icon mr-3"><i class="fe fe-trash-2"></i></span>Trash <span class="ml-auto badge badge-Danger">61</span>
+                      <span class="icon mr-3"><i class="fe fe-trash-2"></i></span>Trash <span class="ml-auto badge badge-danger">61</span>
                     </a>
                   </div>
                   <div class="mt-6">

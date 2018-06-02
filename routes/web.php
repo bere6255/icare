@@ -18,7 +18,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+//for providers
 Route::get('/provider_create', 'HomeController@create_provider');
+//for seekers
 Route::get('/seekers_create', 'HomeController@create_seeker');
 Route::get('/s_dashboard', 'HomeController@seekers_dashboard');
 Route::get('/s_message', 'seekersController@message');
