@@ -1,87 +1,51 @@
-<div class="my-3 my-md-5">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-3">
-                <h3 class="page-title mb-5">Mail Service</h3>
-                <div>
-                  <div class="list-group list-group-transparent mb-0">
-                    <a href="/s_message" class="list-group-item list-group-item-action d-flex align-items-center active">
-                      <span class="icon mr-3"><i class="fe fe-inbox"></i></span>Inbox <span class="ml-auto badge badge-primary">14</span>
-                    </a>
-                    <a href="/s_message/sent" class="list-group-item list-group-item-action d-flex align-items-center">
-                      <span class="icon mr-3"><i class="fe fe-send"></i></span>Sent Mail <span class="ml-auto badge badge-info">6</span>
-                    </a>
-                    <a href="/s_message/trash" class="list-group-item list-group-item-action d-flex align-items-center">
-                      <span class="icon mr-3"><i class="fe fe-trash-2"></i></span>Trash <span class="ml-auto badge badge-danger">12</span>
-                    </a>
-                  </div>
-                  <div class="mt-6">
-                    <a href="/s_message/compose" class="btn btn-secondary btn-block">Compose new Email</a>
-                  </div>
+<div class="col-lg-6">
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Inbox</h4>
+    </div>
+    <div class="comment-widgets scrollable">
+        <!-- Comment Row -->
+        <div class="d-flex flex-row comment-row m-t-0">
+            <div class="p-2"><img src="../../assets/images/users/1.jpg" alt="user" width="50" class="rounded-circle"></div>
+            <div class="comment-text w-100">
+                <h6 class="font-medium">James Anderson</h6>
+                <span class="m-b-15 d-block">Lorem Ipsum is simply dummy text of the printing and type setting industry. </span>
+                <div class="comment-footer">
+                    <span class="text-muted float-right">April 14, 2016</span>
+                    <button type="button" class="btn btn-cyan btn-sm">Edit</button>
+                    <button type="button" class="btn btn-success btn-sm">Publish</button>
+                    <button type="button" class="btn btn-danger btn-sm">Delete</button>
                 </div>
-              </div>
-
-              <div class="col-md-9">
-                              <div class="card">
-                                <div class="card-header">
-                                  <h3 class="card-title">Mail Inbox</h3>
-                                </div>
-                                <div class="table-responsive">
-                                  <table class="table card-table table-striped table-vcenter">
-                                    <thead>
-                                      <tr>
-                                        <th colspan="2">User</th>
-                                        <th>Commit</th>
-                                        <th>Date</th>
-                                        <th></th>
-                                      </tr>
-                                    </thead>
-                                    <tbody>
-                                      <tr>
-                                        <td class="w-1"><span class="avatar" style="background-image: url(./demo/faces/male/9.jpg)"></span></td>
-                                        <td>Ronald Bradley</td>
-                                        <td>Initial commit</td>
-                                        <td class="text-nowrap">May 6, 2018</td>
-                                        <td class="w-1"><a href="#" class="icon"><i class="fe fe-trash"></i></a></td>
-                                      </tr>
-                                      <tr>
-                                        <td><span class="avatar">BM</span></td>
-                                        <td>Russell Gibson</td>
-                                        <td>Main structure</td>
-                                        <td class="text-nowrap">April 22, 2018</td>
-                                        <td><a href="#" class="icon"><i class="fe fe-trash"></i></a></td>
-                                      </tr>
-                                      <tr>
-                                        <td><span class="avatar" style="background-image: url(./demo/faces/female/1.jpg)"></span></td>
-                                        <td>Beverly Armstrong</td>
-                                        <td>Left sidebar adjustments</td>
-                                        <td class="text-nowrap">April 15, 2018</td>
-                                        <td><a href="#" class="icon"><i class="fe fe-trash"></i></a></td>
-                                      </tr>
-                                      <tr>
-                                        <td><span class="avatar" style="background-image: url(./demo/faces/male/4.jpg)"></span></td>
-                                        <td>Bobby Knight</td>
-                                        <td>Topbar dropdown style</td>
-                                        <td class="text-nowrap">April 8, 2018</td>
-                                        <td><a href="#" class="icon"><i class="fe fe-trash"></i></a></td>
-                                      </tr>
-                                      <tr>
-                                        <td><span class="avatar" style="background-image: url(./demo/faces/female/11.jpg)"></span></td>
-                                        <td>Sharon Wells</td>
-                                        <td>Fixes #625</td>
-                                        <td class="text-nowrap">April 9, 2018</td>
-                                        <td><a href="#" class="icon"><i class="fe fe-trash"></i></a></td>
-                                      </tr>
-                                    </tbody>
-                                  </table>
-                                </div>
-                              </div>
-                            </div>
-
-
-
-
-
             </div>
-          </div>
         </div>
+        <!-- Comment Row -->
+        <div class="d-flex flex-row comment-row">
+            <div class="p-2"><img src="../../assets/images/users/4.jpg" alt="user" width="50" class="rounded-circle"></div>
+            <div class="comment-text active w-100">
+                <h6 class="font-medium">Michael Jorden</h6>
+                <span class="m-b-15 d-block">Lorem Ipsum is simply dummy text of the printing and type setting industry. </span>
+                <div class="comment-footer">
+                    <span class="text-muted float-right">May 10, 2016</span>
+                    <button type="button" class="btn btn-cyan btn-sm">Edit</button>
+                    <button type="button" class="btn btn-success btn-sm">Publish</button>
+                    <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                </div>
+            </div>
+        </div>
+        <!-- Comment Row -->
+        <div class="d-flex flex-row comment-row">
+            <div class="p-2"><img src="../../assets/images/users/5.jpg" alt="user" width="50" class="rounded-circle"></div>
+            <div class="comment-text w-100">
+                <h6 class="font-medium">Johnathan Doeting</h6>
+                <span class="m-b-15 d-block">Lorem Ipsum is simply dummy text of the printing and type setting industry. </span>
+                <div class="comment-footer">
+                    <span class="text-muted float-right">August 1, 2016</span>
+                    <button type="button" class="btn btn-cyan btn-sm">Edit</button>
+                    <button type="button" class="btn btn-success btn-sm">Publish</button>
+                    <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

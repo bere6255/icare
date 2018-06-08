@@ -1,172 +1,72 @@
-<div class="my-3 my-md-5">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-4">
-                <div class="card card-profile">
-                  <div class="card-header" style="background-image: url(demo/photos/eberhard-grossgasteiger-311213-500.jpg);"></div>
-                  <div class="card-body text-center">
-                    <img class="card-profile-img" src="demo/faces/male/16.jpg">
-                    <h3 class="mb-3">Peter Richards</h3>
-                    <p class="mb-4">
-                      Big belly rude boy, million dollar hustler. Unemployed.
-                    </p>
-                    <button class="btn btn-outline-primary btn-sm">
-                      <span class="fa fa-twitter"></span> Follow
-                    </button>
-                  </div>
-                </div>
-              </div>
+<div class="col-lg-6">
 
-
-              <div class="col-lg-8">
-                <div class="card">
-                  <div class="card-header">
-                    <h3 class="card-title">Doctors</h3>
-                  </div>
-                  <div class="table-responsive">
-                    <table class="table card-table table-vcenter text-nowrap">
-                      <thead>
-                        <tr>
-                          <th class="w-1">ID.</th>
-                          <th>Name</th>
-                          <th>Specialization</th>
-                          <th>Status</th>
-                          <th></th>
-                          <th></th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td><span class="text-muted">001401</span></td>
-                          <td><a href="invoice.html" class="text-inherit">Design Works</a></td>
-                          <td>
-                            Carlson Limited
-                          </td>
-                          <td>
-                            <span class="status-icon bg-success"></span> Paid
-                          </td>
-                          <td class="text-right">
-                            <a href="javascript:void(0)" class="btn btn-secondary btn-sm">Manage</a>
-                            <div class="dropdown">
-                              <button class="btn btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown">Actions</button>
-                            </div>
-                          </td>
-                          <td>
-                            <a class="icon" href="javascript:void(0)">
-                              <i class="fe fe-edit"></i>
-                            </a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><span class="text-muted">001402</span></td>
-                          <td><a href="invoice.html" class="text-inherit">UX Wireframes</a></td>
-                          <td>
-                            Adobe
-                          </td>
-                          <td>
-                            <span class="status-icon bg-warning"></span> Pending
-                          </td>
-                          <td class="text-right">
-                            <a href="javascript:void(0)" class="btn btn-secondary btn-sm">Manage</a>
-                            <div class="dropdown">
-                              <button class="btn btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown">Actions</button>
-                            </div>
-                          </td>
-                          <td>
-                            <a class="icon" href="javascript:void(0)">
-                              <i class="fe fe-edit"></i>
-                            </a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><span class="text-muted">001403</span></td>
-                          <td><a href="invoice.html" class="text-inherit">New Dashboard</a></td>
-                          <td>
-                            Bluewolf
-                          </td>
-                          <td>
-                            <span class="status-icon bg-warning"></span> Pending
-                          </td>
-                          <td class="text-right">
-                            <a href="javascript:void(0)" class="btn btn-secondary btn-sm">Manage</a>
-                            <div class="dropdown">
-                              <button class="btn btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown">Actions</button>
-                            </div>
-                          </td>
-                          <td>
-                            <a class="icon" href="javascript:void(0)">
-                              <i class="fe fe-edit"></i>
-                            </a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><span class="text-muted">001404</span></td>
-                          <td><a href="invoice.html" class="text-inherit">Landing Page</a></td>
-                          <td>
-                            Salesforce
-                          </td>
-                          <td>
-                            <span class="status-icon bg-secondary"></span> Due in 2 Weeks
-                          </td>
-                          <td class="text-right">
-                            <a href="javascript:void(0)" class="btn btn-secondary btn-sm">Manage</a>
-                            <div class="dropdown">
-                              <button class="btn btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown">Actions</button>
-                            </div>
-                          </td>
-                          <td>
-                            <a class="icon" href="javascript:void(0)">
-                              <i class="fe fe-edit"></i>
-                            </a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><span class="text-muted">001405</span></td>
-                          <td><a href="invoice.html" class="text-inherit">Marketing Templates</a></td>
-                          <td>
-                            Printic
-                          </td>
-                          <td>
-                            <span class="status-icon bg-danger"></span> Paid Today
-                          </td>
-                          <td class="text-right">
-                            <a href="javascript:void(0)" class="btn btn-secondary btn-sm">Manage</a>
-                            <div class="dropdown">
-                              <button class="btn btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown">Actions</button>
-                            </div>
-                          </td>
-                          <td>
-                            <a class="icon" href="javascript:void(0)">
-                              <i class="fe fe-edit"></i>
-                            </a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><span class="text-muted">001406</span></td>
-                          <td><a href="invoice.html" class="text-inherit">Sales Presentation</a></td>
-                          <td>
-                            Tabdaq
-                          </td>
-                          <td>
-                            <span class="status-icon bg-secondary"></span> Due in 3 Weeks
-                          </td>
-                          <td class="text-right">
-                            <a href="javascript:void(0)" class="btn btn-secondary btn-sm">Manage</a>
-                            <div class="dropdown">
-                              <button class="btn btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown">Actions</button>
-                            </div>
-                          </td>
-                          <td>
-                            <a class="icon" href="javascript:void(0)">
-                              <i class="fe fe-edit"></i>
-                            </a>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
+    <!-- Card -->
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Prescription</h4>
+            <div class="todo-widget scrollable" style="height:450px;">
+                <ul class="list-task todo-list list-group m-b-0" data-role="tasklist">
+                    <li class="list-group-item todo-item" data-role="task">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customCheck">
+                            <label class="custom-control-label todo-label" for="customCheck">
+                                <span class="todo-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span> <span class="badge badge-pill badge-danger float-right">Today</span>
+                            </label>
+                        </div>
+                        <ul class="list-style-none assignedto">
+                            <li class="assignee"><img class="rounded-circle" width="40" src="../../assets/images/users/1.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Steave"></li>
+                            <li class="assignee"><img class="rounded-circle" width="40" src="../../assets/images/users/2.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Jessica"></li>
+                            <li class="assignee"><img class="rounded-circle" width="40" src="../../assets/images/users/3.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Priyanka"></li>
+                            <li class="assignee"><img class="rounded-circle" width="40" src="../../assets/images/users/4.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Selina"></li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item todo-item" data-role="task">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customCheck1">
+                            <label class="custom-control-label todo-label" for="customCheck1">
+                                <span class="todo-desc">Lorem Ipsum is simply dummy text of the printing</span><span class="badge badge-pill badge-primary float-right">1 week </span>
+                            </label>
+                        </div>
+                        <div class="item-date"> 26 jun 2017</div>
+                    </li>
+                    <li class="list-group-item todo-item" data-role="task">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customCheck2">
+                            <label class="custom-control-label todo-label" for="customCheck2">
+                                <span class="todo-desc">Give Purchase report to</span> <span class="badge badge-pill badge-info float-right">Yesterday</span>
+                            </label>
+                        </div>
+                        <ul class="list-style-none assignedto">
+                            <li class="assignee"><img class="rounded-circle" width="40" src="../../assets/images/users/3.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Priyanka"></li>
+                            <li class="assignee"><img class="rounded-circle" width="40" src="../../assets/images/users/4.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Selina"></li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item todo-item" data-role="task">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customCheck3">
+                            <label class="custom-control-label todo-label" for="customCheck3">
+                                <span class="todo-desc">Lorem Ipsum is simply dummy text of the printing </span> <span class="badge badge-pill badge-warning float-right">2 weeks</span>
+                            </label>
+                        </div>
+                        <div class="item-date"> 26 jun 2017</div>
+                    </li>
+                    <li class="list-group-item todo-item" data-role="task">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customCheck4">
+                            <label class="custom-control-label todo-label" for="customCheck4">
+                                <span class="todo-desc">Give Purchase report to</span> <span class="badge badge-pill badge-info float-right">Yesterday</span>
+                            </label>
+                        </div>
+                        <ul class="list-style-none assignedto">
+                            <li class="assignee"><img class="rounded-circle" width="40" src="../../assets/images/users/3.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Priyanka"></li>
+                            <li class="assignee"><img class="rounded-circle" width="40" src="../../assets/images/users/4.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Selina"></li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
-          </div>
         </div>
+    </div>
+    <!-- card -->
+    
+
+</div>
