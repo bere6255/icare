@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
+use Mail;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
@@ -62,14 +63,29 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+      $vr_mail = str_random(30);
       $_id = microtime().rand(0,100000000);
+      $val_mail = array(
+        'reg_mail' => $data['email'],
+        'validate' => $vr_mail, );
+        Mail::send('mails.validate', $val_mail, function ($message) use ($val_mail)
+         {
+           $message->from('noreply@icare.com', 'iCare.LTD');
+           $message->sender('noreply@icare.com', 'iCare.LTD');
+           $message->to($val_mail['reg_mail'], $name = null);
+           $message->replyTo('noreply@icare.com', 'iCare.LTD');
+           $message->subject('Activate your acount to complate registration');
+
+         });
         return User::create([
             'users_id' => $_id,
             '_from' =>"main",
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'activertion'=>"activated",
+            'activation'=>$vr_mail,
             'subscribtion' => "noo"
         ]);
+
     }
+
 }

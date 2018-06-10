@@ -1,7 +1,7 @@
 <!-- ============================================================== -->
 <!-- pricing Cards  -->
 <!-- ============================================================== -->
-
+<div class="container-fluid">
 <div class="page-header">
   <h1 class="page-title">
     STANDARD PLAN
@@ -18,8 +18,12 @@
           <li><i class="fa fa-check text-danger mr-2" aria-hidden="true"></i> 1 Transection</li>
         </ul>
         <div class="text-center mt-6">
-          <a href="#" class="btn btn-block badge-pill btn-danger">Choose Plan</a>
-        </div>
+          <form method="post" enctype="form-data" action="/buy_unit">
+            <input type="hidden" name="sub" value="1500"/>
+            <button class="btn btn-block badge-pill btn-danger">Choose Plan</button>
+
+          </form>
+          </div>
       </div>
     </div>
   </div>
@@ -129,6 +133,7 @@
       </div>
     </div>
   </div>
+</div>
 </div>
 <!-- ============================================================== -->
 <!-- pricing Cards ends -->

@@ -8,8 +8,8 @@
 </div>
 
 <div class="container-fluid">
-
-
+@if(Auth::user()->activation=="activated")
+@if(Auth::user()->subscribtion=="noo")
   <div class="row row-cards row-deck">
     <div class="col-sm-6 col-xl-6">
       <div class="card">
@@ -45,14 +45,17 @@
     </div>
   </div>
 
-
-
-
-
-   <div class="row">
-       <!-- column -->
-
-       <!-- column -->
-
-
-   </div>
+@endif
+@else
+  <div class="col-sm-6 col-xl-6 text-center">
+<div class="alert alert-success" role="alert">
+    <h4 class="alert-heading">You are almost done!</h4>
+    <p> Welcome to Icare your number one online medical center where we link you with the best doctors and persent all over the world</p>
+    <hr>
+    <p class="mb-0">An E-mail have been sent to your mail to activate your account.</p>
+    <form method="post" enctype="form-data" action="/resend_activate" >
+      <button class="btn btn-block badge-pill btn-warning">click here to resend the mail</button>
+    </form>
+</div>
+</div>
+@endif

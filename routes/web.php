@@ -14,10 +14,16 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/logout', function () {
+    Auth::logout();
+    return redirect('/');
+});
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/activate_account', 'other@activate');
+Route::post('/resend_activate', 'HomeController@resend_activate');
 //for providers
 Route::get('/provider_create', 'HomeController@create_provider');
 //for seekers
