@@ -20,7 +20,8 @@ Route::get('/logout', function () {
 });
 
 Auth::routes();
-
+Route::get('/payment/callback', 'HomeController@handleGatewayCallback');
+Route::post('/pay', 'HomeController@redirectToGateway')->name('pay');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/activate_account', 'other@activate');
 Route::post('/resend_activate', 'HomeController@resend_activate');

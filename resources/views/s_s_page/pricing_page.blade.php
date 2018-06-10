@@ -18,8 +18,12 @@
           <li><i class="fa fa-check text-danger mr-2" aria-hidden="true"></i> 1 Transection</li>
         </ul>
         <div class="text-center mt-6">
-          <form method="post" enctype="form-data" action="/buy_unit">
-            <input type="hidden" name="sub" value="1500"/>
+          <form method="post" enctype="form-data" action="/pay">
+            <input type="hidden" name="email" value="{{Auth::user()->email}}"> {{-- required --}}
+            <input type="hidden" name="amount" value="150000"> {{-- required in kobo --}}
+            <input type="hidden" name="reference" value="{{ Paystack::genTranxRef() }}"> {{-- required --}}
+            <input type="hidden" name="key" value="{{ config('paystack.secretKey') }}"> {{-- required --}}
+            {{ csrf_field() }} {{-- works only when using laravel 5.1, 5.2 --}}
             <button class="btn btn-block badge-pill btn-danger">Choose Plan</button>
 
           </form>
@@ -35,8 +39,17 @@
         <ul class="list-unstyled leading-loose">
           <li><i class="fa fa-check text-warning mr-2" aria-hidden="true"></i> 31 day</li>
         </ul>
+
         <div class="text-center mt-6">
-          <a href="#" class="btn btn-warning btn-block badge-pill">Choose plan</a>
+          <form method="post" enctype="form-data" action="/pay">
+            <input type="hidden" name="email" value="{{Auth::user()->email}}"> {{-- required --}}
+            <input type="hidden" name="amount" value="400000"> {{-- required in kobo --}}
+            <input type="hidden" name="reference" value="{{ Paystack::genTranxRef() }}"> {{-- required --}}
+            <input type="hidden" name="key" value="{{ config('paystack.secretKey') }}"> {{-- required --}}
+            {{ csrf_field() }} {{-- works only when using laravel 5.1, 5.2 --}}
+            <button class="btn btn-block badge-pill btn-warning">Choose Plan</button>
+
+          </form>
         </div>
       </div>
     </div>
@@ -50,7 +63,16 @@
           <li><i class="fa fa-check text-primary mr-2" aria-hidden="true"></i> 186 day</li>
         </ul>
         <div class="text-center mt-6">
-          <a href="#" class="btn btn-primary btn-block badge-pill">Choose plan</a>
+          <form method="post" enctype="form-data" action="/pay">
+            <input type="hidden" name="email" value="{{Auth::user()->email}}"> {{-- required --}}
+            <input type="hidden" name="amount" value="2400000"> {{-- required in kobo --}}
+            <input type="hidden" name="reference" value="{{ Paystack::genTranxRef() }}"> {{-- required --}}
+            <input type="hidden" name="key" value="{{ config('paystack.secretKey') }}"> {{-- required --}}
+            {{ csrf_field() }} {{-- works only when using laravel 5.1, 5.2 --}}
+            <button class="btn btn-block badge-pill btn-primary">Choose Plan</button>
+
+          </form>
+          
         </div>
       </div>
     </div>
@@ -64,8 +86,16 @@
           <li><i class="fa fa-check text-success mr-2" aria-hidden="true"></i> 365 day</li>
         </ul>
         <div class="text-center mt-6">
-          <a href="#" class="btn btn-success btn-block badge-pill">Choose plan</a>
-        </div>
+          <form method="post" enctype="form-data" action="/pay">
+            <input type="hidden" name="email" value="{{Auth::user()->email}}"> {{-- required --}}
+            <input type="hidden" name="amount" value="3600000"> {{-- required in kobo --}}
+            <input type="hidden" name="reference" value="{{ Paystack::genTranxRef() }}"> {{-- required --}}
+            <input type="hidden" name="key" value="{{ config('paystack.secretKey') }}"> {{-- required --}}
+            {{ csrf_field() }} {{-- works only when using laravel 5.1, 5.2 --}}
+            <button class="btn btn-block badge-pill btn-success">Choose Plan</button>
+
+          </form>
+          </div>
       </div>
     </div>
   </div>
@@ -86,7 +116,16 @@
           <li><i class="fa fa-check text-danger mr-2" aria-hidden="true"></i> 1 day</li>
         </ul>
         <div class="text-center mt-6">
-          <a href="#" class="btn btn-danger btn-block badge-pill">Choose plan</a>
+          <form method="post" enctype="form-data" action="/pay">
+            <input type="hidden" name="email" value="{{Auth::user()->email}}"> {{-- required --}}
+            <input type="hidden" name="amount" value="200000"> {{-- required in kobo --}}
+            <input type="hidden" name="reference" value="{{ Paystack::genTranxRef() }}"> {{-- required --}}
+            <input type="hidden" name="key" value="{{ config('paystack.secretKey') }}"> {{-- required --}}
+            {{ csrf_field() }} {{-- works only when using laravel 5.1, 5.2 --}}
+            <button class="btn btn-block badge-pill btn-danger">Choose Plan</button>
+
+          </form>
+
         </div>
       </div>
     </div>
@@ -100,7 +139,16 @@
           <li><i class="fa fa-check text-warning mr-2" aria-hidden="true"></i> 31 day</li>
         </ul>
         <div class="text-center mt-6">
-          <a href="#" class="btn btn-warning btn-block badge-pill">Choose plan</a>
+          <form method="post" enctype="form-data" action="/pay">
+            <input type="hidden" name="email" value="{{Auth::user()->email}}"> {{-- required --}}
+            <input type="hidden" name="amount" value="550000"> {{-- required in kobo --}}
+            <input type="hidden" name="reference" value="{{ Paystack::genTranxRef() }}"> {{-- required --}}
+            <input type="hidden" name="key" value="{{ config('paystack.secretKey') }}"> {{-- required --}}
+            {{ csrf_field() }} {{-- works only when using laravel 5.1, 5.2 --}}
+            <button class="btn btn-block badge-pill btn-warning">Choose Plan</button>
+
+          </form>
+
         </div>
       </div>
     </div>
@@ -114,7 +162,16 @@
           <li><i class="fa fa-check text-primary mr-2" aria-hidden="true"></i> 186 day</li>
         </ul>
         <div class="text-center mt-6">
-          <a href="#" class="btn btn-primary btn-block badge-pill">Choose plan</a>
+          <form method="post" enctype="form-data" action="/pay">
+            <input type="hidden" name="email" value="{{Auth::user()->email}}"> {{-- required --}}
+            <input type="hidden" name="amount" value="3000000"> {{-- required in kobo --}}
+            <input type="hidden" name="reference" value="{{ Paystack::genTranxRef() }}"> {{-- required --}}
+            <input type="hidden" name="key" value="{{ config('paystack.secretKey') }}"> {{-- required --}}
+            {{ csrf_field() }} {{-- works only when using laravel 5.1, 5.2 --}}
+            <button class="btn btn-block badge-pill btn-primary">Choose Plan</button>
+
+          </form>
+
         </div>
       </div>
     </div>
@@ -128,7 +185,16 @@
           <li><i class="fa fa-check text-success mr-2" aria-hidden="true"></i> 365 day</li>
         </ul>
         <div class="text-center mt-6">
-          <a href="#" class="btn btn-success btn-block badge-pill">Choose plan</a>
+          <form method="post" enctype="form-data" action="/pay">
+            <input type="hidden" name="email" value="{{Auth::user()->email}}"> {{-- required --}}
+            <input type="hidden" name="amount" value="6000000"> {{-- required in kobo --}}
+            <input type="hidden" name="reference" value="{{ Paystack::genTranxRef() }}"> {{-- required --}}
+            <input type="hidden" name="key" value="{{ config('paystack.secretKey') }}"> {{-- required --}}
+            {{ csrf_field() }} {{-- works only when using laravel 5.1, 5.2 --}}
+            <button class="btn btn-block badge-pill btn-success">Choose Plan</button>
+
+          </form>
+
         </div>
       </div>
     </div>
