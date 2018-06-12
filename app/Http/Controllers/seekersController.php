@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class seekersController extends Controller
@@ -13,6 +13,7 @@ class seekersController extends Controller
       return view('s_page.msg_sent');
     }
     public function msg_trash(){
+
       return view('s_page.msg_trash');
     }
     public function msg_compose(){
@@ -23,5 +24,8 @@ class seekersController extends Controller
     }
     public function prescriptions(){
       return view('s_page.s_prescription');
+    }
+    public function transac_hys(){
+      return view('s_page.transac_hys');
     }
 }

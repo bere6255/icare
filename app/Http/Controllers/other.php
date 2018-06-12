@@ -12,8 +12,12 @@ class other extends Controller
     $key = $request->get('dell');
     $act_play = DB::table('users')->where('email', '=', $mail)->where('activation', '=', $key)->get();
     if (count($act_play)>0) {
-      DB::table('users')->where('email', '=', $mail)->update(['activation' => "activated"]);
-      return redirect('home');
+      if ($act_play[0]->activation!="activated") {
+        DB::table('users')->where('email', '=', $mail)->update(['activation' => "activated"]);
+        return redirect('home');
+      } else {
+        return redirect('home');
+      }
     } else {
       return redirect('/');
     }

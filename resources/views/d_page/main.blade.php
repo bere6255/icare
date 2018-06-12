@@ -3,10 +3,10 @@
   @include('s_d_navside.nav')
 @endsection
 @section('sidenav')
-  @include('s_d_navside.side')
+  @include('s_d_navside.d_side')
 @endsection
 @section('content')
-  @include('s_s_page.prescription')
+  @include('d_s_page.main')
 @endsection
 @section('foot')
   @include('s_d_navside.footer')

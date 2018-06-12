@@ -64,7 +64,7 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
       $vr_mail = str_random(30);
-      $_id = microtime().rand(0,100000000);
+      $_id = microtime().str_random(30);
       $val_mail = array(
         'reg_mail' => $data['email'],
         'validate' => $vr_mail, );

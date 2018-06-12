@@ -44,16 +44,48 @@
       </div>
     </div>
   </div>
+@else
+<div class="row">
+    <!-- Column -->
+    <div class="col-md-6 col-lg-6 col-xlg-3">
+        <div class="card card-hover">
+            <div class="box bg-success text-center">
+                <h1 class="font-light text-white"><i> 0</i></h1>
+                <h6 class="text-white">Available Unit</h6>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-md-6 col-lg-6 col-xlg-3">
+        <div class="card card-hover">
+            <div class="box bg-warning text-center">
+                <h1 class="font-light text-white"><i>STANDARD</i></h1>
+                <h6 class="text-white">subscription</h6>
+            </div>
+        </div>
+    </div>
+
+    <!-- Column -->
+</div>
 
 @endif
+
+
+
+
 @else
+
   <div class="col-sm-6 col-xl-6 text-center">
 <div class="alert alert-success" role="alert">
     <h4 class="alert-heading">You are almost done!</h4>
     <p> Welcome to Icare your number one online medical center where we link you with the best doctors and persent all over the world</p>
     <hr>
+
     <p class="mb-0">An E-mail have been sent to your mail to activate your account.</p>
+
     <form method="post" enctype="form-data" action="/resend_activate" >
+      {{ csrf_field() }}
       <button class="btn btn-block badge-pill btn-warning">click here to resend the mail</button>
     </form>
 </div>

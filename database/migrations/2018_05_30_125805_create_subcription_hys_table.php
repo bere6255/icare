@@ -15,6 +15,11 @@ class CreateSubcriptionHysTable extends Migration
     {
         Schema::create('subcription_hys', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('email');
+            $table->string('sub_id');
+            $table->string('unit');
+            $table->string('status');
+            $table->string('amount');
             $table->timestamps();
         });
     }

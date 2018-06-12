@@ -1,4 +1,13 @@
 @extends('layouts.icare_app')
+@section('navber')
+  @include('s_d_navside.nav')
+@endsection
+@section('sidenav')
+  @include('s_d_navside.side')
+@endsection
 @section('content')
   @include('s_s_page.doctors_page')
+@endsection
+@section('foot')
+  @include('s_d_navside.footer')
 @endsection

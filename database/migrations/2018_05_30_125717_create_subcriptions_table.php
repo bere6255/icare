@@ -15,6 +15,10 @@ class CreateSubcriptionsTable extends Migration
     {
         Schema::create('subcriptions', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('email');
+            $table->string('unit');
+            $table->string('users_id');
+            $table->string('sub_type');
             $table->timestamps();
         });
     }

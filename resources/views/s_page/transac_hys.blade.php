@@ -6,7 +6,7 @@
   @include('s_d_navside.side')
 @endsection
 @section('content')
-  @include('s_s_page.prescription')
+  @include('s_s_page.transac_hys')
 @endsection
 @section('foot')
   @include('s_d_navside.footer')

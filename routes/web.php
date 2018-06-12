@@ -18,6 +18,8 @@ Route::get('/logout', function () {
     Auth::logout();
     return redirect('/');
 });
+Route::get('/pricing', 'HomeController@pricing');
+Route::get('/doctors', 'providers@index')->name('doctor');
 
 Auth::routes();
 Route::get('/payment/callback', 'HomeController@handleGatewayCallback');
@@ -31,7 +33,8 @@ Route::get('/provider_create', 'HomeController@create_provider');
 Route::get('/seekers_create', 'HomeController@create_seeker');
 Route::get('/s_dashboard', 'HomeController@seekers_dashboard');
 Route::get('/s_message', 'seekersController@message');
-Route::get('/s_doctors', 'seekersController@doctors');
+Route::get('/s_transec_hys', 'seekersController@transac_hys');
+Route::get('/view_doctors', 'seekersController@doctors');
 Route::get('/s_prescribtions', 'seekersController@prescriptions');
 Route::get('/s_message/sent', 'seekersController@msg_sent');
 Route::get('/s_message/trash', 'seekersController@msg_trash');
