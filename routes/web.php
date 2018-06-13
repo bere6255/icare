@@ -19,8 +19,10 @@ Route::get('/logout', function () {
     return redirect('/');
 });
 Route::get('/pricing', 'HomeController@pricing');
-Route::get('/doctors', 'providers@index')->name('doctor');
+Route::get('/provider', 'providers@index')->name('provider');
 
+Route::post('/provider_request', 'HomeController@provider_request');
+Route::get('/getstate', 'HomeController@getstate');
 Auth::routes();
 Route::get('/payment/callback', 'HomeController@handleGatewayCallback');
 Route::post('/pay', 'HomeController@redirectToGateway')->name('pay');

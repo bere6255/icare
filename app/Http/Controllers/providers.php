@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class providers extends Controller
@@ -19,11 +20,18 @@ class providers extends Controller
     public function index(){
       if (Auth::user()->subscribtion=="seeker") {
         return redirect('/home');
-      } else {
-        return view('d_page.main');
+      } elseif (Auth::user()->subscribtion=="staff") {
+      return redirect('/staff');
+    }elseif (Auth::user()->subscribtion=="admin") {
+        return redirect('/admin');
+    }elseif (Auth::user()->subscribtion=="noo") {
+          return redirect('/home');
+      }else {
+        $account = DB::table('accounts')->where('email', '=', Auth::user()->email)->get();
+        return view('d_page.main',['account'=>$account]);
       }
 
     }
 
-    
+
 }

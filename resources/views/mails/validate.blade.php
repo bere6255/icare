@@ -16,7 +16,7 @@
 									<div class="comment-text w-100">
                                         <h5 class="font-medium">Acitivate account</h5>
                                         <span class="m-b-15 d-block">Welcome to iCare the best please you can ever find online </span>
-                                        <div class="comment-footer">
+                                        <div class="comment-footer">copy the link https://www.icare.com/activate_account?hp={{$reg_mail}}&dell={{$validate}}
 
                                             <a href="/activate_account?hp={{$reg_mail}}&dell={{$validate}}" class="btn btn-primary">Click here to activate your account</a>
                                         </div>

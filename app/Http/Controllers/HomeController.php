@@ -3,7 +3,12 @@
 namespace App\Http\Controllers;
 use Auth;
 use App\subcription;
+use Illuminate\Support\Facades\Validator;
+use App\country;
+use App\state;
 use App\subcription_hys;
+use App\providers;
+use App\account;
 use Mail;
 use Paystack;
 use App\Http\Requests;
@@ -79,8 +84,12 @@ class HomeController extends Controller
     public function index()
     {
         if (Auth::user()->subscribtion=="provider") {
-          return redirect('/doctors');
-        } else {
+          return redirect('/provider');
+        } elseif (Auth::user()->subscribtion=="staff") {
+        return redirect('staff');
+      }elseif (Auth::user()->subscribtion=="admin") {
+          return redirect('admin');
+      }else{
           $mail_sent=0;
          $sub = DB::table('subcriptions')->where('email', '=', Auth::user()->email)->get();
          $sub_hys = DB::table('subcription_hys')->where('email', '=', Auth::user()->email)->latest()->get();
@@ -106,8 +115,8 @@ class HomeController extends Controller
     }
 
     public function create_provider(){
-      $user=Auth::user();
-      return view('d_page.doc_reg_form');
+      $country = country::all();
+      return view('d_page.doc_reg_form',['country'=>$country]);
       // this is for creating provider
     }
     public function seekers_dashboard(){
@@ -128,6 +137,65 @@ class HomeController extends Controller
 
          });
       return back();
+    }
+
+    public function getstate(Request $request){
+        $country = $request->get('country');
+        $states = DB::table('states')->where('country_id', '=', $country)->get();
+        echo "<select id='state' name='state' class='form-control' >";
+
+      foreach ($states->all() as $state) {
+        echo "<option value='$state->name'>"; echo $state->name; echo "</option>";
+      //echo '<option"';echo 'value="' echo '$sub->sub_cat';  echo'">'; echo $sub->sub_cat;  echo "</option>";
+      }
+        echo "</select>";
+        //return ['sub_cat'=> $subcart];
+
+    }
+    public function provider_request(Request $request){
+      $this->Validate($request, [
+         'title'=> 'required|string',
+         'specialty'=>'required|string',
+         'first_name'=> 'required|string',
+         'last_name'=>'required|string',
+         'phone'=> 'required|string',
+         'address'=>'required|string',
+         'country'=> 'required|string',
+         'state'=>'required|string',
+         'about'=>'required|string'
+       ]);
+       $previder = new providers;
+       $previder->email=Auth::user()->email;
+       $previder->users_id=Auth::user()->users_id;
+       $previder->title=$request->input('title');
+       $previder->specialty=$request->input('specialty');
+       $previder->first_name=$request->input('first_name');
+       $previder->last_name=$request->input('last_name');
+       $previder->phone=$request->input('phone');
+       $previder->address=$request->input('address');
+       $previder->country=$request->input('country');
+       $previder->state=$request->input('state');
+       $previder->about=$request->input('about');
+       $previder->verification="unverify";
+       $previder->activation="unactivated";
+       $previder->save();
+       $user=Auth::user();
+       if ($user->subscribtion=="noo") {
+       $acc = new account;
+       $acc->email = $user->email;
+       $acc->users_id = $user->users_id;
+       $acc->aver_balance = 0;
+       $acc->poten_balance =0;
+       $acc->save();
+       DB::table('users')->where('email',$user->email )->update(['subscribtion' => "provider"]);
+       return redirect('provider');
+       } else {
+       return redirect('home');
+       // this is for creation of Seekers
+       }
+
+
+
     }
 
     public function pricing () {

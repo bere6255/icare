@@ -99,6 +99,7 @@
     <!--This page JavaScript -->
     <!-- <script src="../../dist/js/pages/dashboards/dashboard1.js"></script> -->
     <!-- Charts js Files -->
+    <script src="../../js/custom.js"></script>
     <script src="../../assets/libs/flot/excanvas.js"></script>
     <script src="../../assets/libs/flot/jquery.flot.js"></script>
     <script src="../../assets/libs/flot/jquery.flot.pie.js"></script>

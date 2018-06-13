@@ -15,6 +15,11 @@ class CreateAccountHysTable extends Migration
     {
         Schema::create('account_hys', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('email');
+            $table->string('users_id');
+            $table->string('aver_balance');
+            $table->string('poten_balance');
+            $table->string('job');
             $table->timestamps();
         });
     }
