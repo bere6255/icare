@@ -67,6 +67,79 @@
     </div>
 
     <!-- Column -->
+
+
+    <div class="col-md-4 col-lg-4 col-xlg-3">
+      <div class="card">
+            <div class="card-body">
+              <a href="/s_transec_hys">  <h5 class="card-title m-b-0">Subcribtion Hystry</h5></a>
+            </div>
+            <table class="table">
+                  <thead>
+                    <tr>
+                      <th >Unit</th>
+                      <th >Amount</th>
+                      <th >Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    @if(count($sub_hys)>0)
+                    @foreach($sub_hys->all() as $sub_hys)
+                    <tr>
+                      <td>{{$sub_hys->unit}}</td>
+                      <td>{{$sub_hys->amount}}</td>
+                      @if($sub_hys->status=="successful")
+                      <td class="text-success">successful</td>
+                      @elseif($sub_hys->status=="processing")
+                      <td class="text-warning">processing</td>
+                      @else
+                      <td class="text-danger">Cancled</td>
+                      @endif
+                    </tr>
+                    @endforeach
+                    @endif
+                  </tbody>
+            </table>
+        </div>
+      </div>
+
+      <div class="col-md-8 col-lg-8 col-xlg-3">
+        <div class="card">
+              <div class="card-body">
+                  <h5 class="card-title m-b-0">My Bookings</h5>
+              </div>
+              <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Reason</th>
+                        <th scope="col">Note</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                      </tr>
+
+                    </tbody>
+              </table>
+          </div>
+        </div>
+
+
+
 </div>
 
 @endif

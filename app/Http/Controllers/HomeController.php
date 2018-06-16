@@ -41,18 +41,20 @@ class HomeController extends Controller
     {
       $this->Validate($request, [
          'email'=> 'required|string',
-         'amount'=>'required|string'
+         'amount'=>'required|string',
+         'unit'=>'required|string'
        ]);
       $email = $request->input('email');
       $amount = $request->input('amount');
+      $unit = $request->input('unit');
       $tran_id = str_random(10);
 
       $sub_hys = new subcription_hys;
-      $sub_hys->email = $user['id'];
+      $sub_hys->email = $email;
       $sub_hys->sub_id = $tran_id;
-      $sub_hys->unit = $order_table_id;
+      $sub_hys->unit = $unit;
       $sub_hys->status = "processing";
-      $sub_hys->amount = $order_amount;
+      $sub_hys->amount = $amount;
       $sub_hys->save();
         return Paystack::getAuthorizationUrl()->redirectNow();
     }
@@ -178,6 +180,7 @@ class HomeController extends Controller
        $previder->about=$request->input('about');
        $previder->verification="unverify";
        $previder->activation="unactivated";
+       $previder->img="image url will be at this point";
        $previder->save();
        $user=Auth::user();
        if ($user->subscribtion=="noo") {

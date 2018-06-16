@@ -42,6 +42,7 @@
               <option value="Dr">Dr</option>
               <option value="Pr">Pr</option>
             </select>
+
           </div>
           <div class="input-group">
             @if ($errors->has('specialty'))
@@ -176,4 +177,8 @@
 <!-- ============================================================== -->
 <!-- Doctors form Cards  -->
 <!-- ============================================================== -->
+
+
+
+
 </div>

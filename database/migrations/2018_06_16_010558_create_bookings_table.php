@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAccountHysTable extends Migration
+class CreateBookingsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,16 @@ class CreateAccountHysTable extends Migration
      */
     public function up()
     {
-        Schema::create('account_hys', function (Blueprint $table) {
+        Schema::create('bookings', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('email');
-            $table->string('job_id');
-            $table->string('amount');
-            $table->string('transaction_ID');
+            $table->string('seeker');
+            $table->string('provider');
+            $table->string('request_ID');
+            $table->string('name');
+            $table->string('reason');
+            $table->string('note');
             $table->string('status');
+            $table->string('action');
             $table->timestamps();
         });
     }
@@ -31,6 +34,6 @@ class CreateAccountHysTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('account_hys');
+        Schema::dropIfExists('bookings');
     }
 }

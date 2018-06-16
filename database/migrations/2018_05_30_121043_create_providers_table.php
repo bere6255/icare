@@ -28,6 +28,7 @@ class CreateProvidersTable extends Migration
             $table->string('about');
             $table->string('verification');
             $table->string('activation');
+            $table->string('img');
             $table->timestamps();
         });
     }

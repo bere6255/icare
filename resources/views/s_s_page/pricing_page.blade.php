@@ -21,6 +21,7 @@
           <form method="post" enctype="form-data" action="/pay">
             <input type="hidden" name="email" value="{{Auth::user()->email}}"> {{-- required --}}
             <input type="hidden" name="amount" value="150000"> {{-- required in kobo --}}
+            <input type="hidden" name="unit" value="1">
             <input type="hidden" name="reference" value="{{ Paystack::genTranxRef() }}"> {{-- required --}}
             <input type="hidden" name="key" value="{{ config('paystack.secretKey') }}"> {{-- required --}}
             {{ csrf_field() }} {{-- works only when using laravel 5.1, 5.2 --}}
@@ -44,6 +45,7 @@
           <form method="post" enctype="form-data" action="/pay">
             <input type="hidden" name="email" value="{{Auth::user()->email}}"> {{-- required --}}
             <input type="hidden" name="amount" value="400000"> {{-- required in kobo --}}
+            <input type="hidden" name="unit" value="31">
             <input type="hidden" name="reference" value="{{ Paystack::genTranxRef() }}"> {{-- required --}}
             <input type="hidden" name="key" value="{{ config('paystack.secretKey') }}"> {{-- required --}}
             {{ csrf_field() }} {{-- works only when using laravel 5.1, 5.2 --}}
@@ -66,13 +68,14 @@
           <form method="post" enctype="form-data" action="/pay">
             <input type="hidden" name="email" value="{{Auth::user()->email}}"> {{-- required --}}
             <input type="hidden" name="amount" value="2400000"> {{-- required in kobo --}}
+            <input type="hidden" name="unit" value="186">
             <input type="hidden" name="reference" value="{{ Paystack::genTranxRef() }}"> {{-- required --}}
             <input type="hidden" name="key" value="{{ config('paystack.secretKey') }}"> {{-- required --}}
             {{ csrf_field() }} {{-- works only when using laravel 5.1, 5.2 --}}
             <button class="btn btn-block badge-pill btn-primary">Choose Plan</button>
 
           </form>
-          
+
         </div>
       </div>
     </div>
@@ -89,6 +92,7 @@
           <form method="post" enctype="form-data" action="/pay">
             <input type="hidden" name="email" value="{{Auth::user()->email}}"> {{-- required --}}
             <input type="hidden" name="amount" value="3600000"> {{-- required in kobo --}}
+            <input type="hidden" name="unit" value="372">
             <input type="hidden" name="reference" value="{{ Paystack::genTranxRef() }}"> {{-- required --}}
             <input type="hidden" name="key" value="{{ config('paystack.secretKey') }}"> {{-- required --}}
             {{ csrf_field() }} {{-- works only when using laravel 5.1, 5.2 --}}
@@ -119,6 +123,7 @@
           <form method="post" enctype="form-data" action="/pay">
             <input type="hidden" name="email" value="{{Auth::user()->email}}"> {{-- required --}}
             <input type="hidden" name="amount" value="200000"> {{-- required in kobo --}}
+            <input type="hidden" name="unit" value="1">
             <input type="hidden" name="reference" value="{{ Paystack::genTranxRef() }}"> {{-- required --}}
             <input type="hidden" name="key" value="{{ config('paystack.secretKey') }}"> {{-- required --}}
             {{ csrf_field() }} {{-- works only when using laravel 5.1, 5.2 --}}
@@ -142,6 +147,7 @@
           <form method="post" enctype="form-data" action="/pay">
             <input type="hidden" name="email" value="{{Auth::user()->email}}"> {{-- required --}}
             <input type="hidden" name="amount" value="550000"> {{-- required in kobo --}}
+            <input type="hidden" name="unit" value="31">
             <input type="hidden" name="reference" value="{{ Paystack::genTranxRef() }}"> {{-- required --}}
             <input type="hidden" name="key" value="{{ config('paystack.secretKey') }}"> {{-- required --}}
             {{ csrf_field() }} {{-- works only when using laravel 5.1, 5.2 --}}
@@ -165,6 +171,7 @@
           <form method="post" enctype="form-data" action="/pay">
             <input type="hidden" name="email" value="{{Auth::user()->email}}"> {{-- required --}}
             <input type="hidden" name="amount" value="3000000"> {{-- required in kobo --}}
+            <input type="hidden" name="unit" value="186">
             <input type="hidden" name="reference" value="{{ Paystack::genTranxRef() }}"> {{-- required --}}
             <input type="hidden" name="key" value="{{ config('paystack.secretKey') }}"> {{-- required --}}
             {{ csrf_field() }} {{-- works only when using laravel 5.1, 5.2 --}}
@@ -188,6 +195,7 @@
           <form method="post" enctype="form-data" action="/pay">
             <input type="hidden" name="email" value="{{Auth::user()->email}}"> {{-- required --}}
             <input type="hidden" name="amount" value="6000000"> {{-- required in kobo --}}
+            <input type="hidden" name="unit" value="372">
             <input type="hidden" name="reference" value="{{ Paystack::genTranxRef() }}"> {{-- required --}}
             <input type="hidden" name="key" value="{{ config('paystack.secretKey') }}"> {{-- required --}}
             {{ csrf_field() }} {{-- works only when using laravel 5.1, 5.2 --}}

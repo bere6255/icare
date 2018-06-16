@@ -20,47 +20,30 @@
                                     <tr>
                                         <th scope="col">ID</th>
                                         <th scope="col">Unit</th>
-                                        <th scope="col">Status</th>
                                         <th scope="col">Amount</th>
+                                        <th scope="col">Status</th>
+                                        <th scope="col">Date</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>Making The New Suit</td>
-                                        <td class="text-success">Progress</td>
-                                        <td>
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Update">
-                                                <i class="mdi mdi-check"></i>
-                                            </a>
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete">
-                                                <i class="mdi mdi-close"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Luanch My New Site</td>
-                                        <td class="text-warning">Pending</td>
-                                        <td>
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Update">
-                                                <i class="mdi mdi-check"></i>
-                                            </a>
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete">
-                                                <i class="mdi mdi-close"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Maruti Excellant Theme</td>
-                                        <td class="text-danger">Cancled</td>
-                                        <td>
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Update">
-                                                <i class="mdi mdi-check"></i>
-                                            </a>
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete">
-                                                <i class="mdi mdi-close"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
+                                  @if(count($sub_hys)>0)
+                                  {{$sub_hys->links()}}
+                                  @foreach($sub_hys->all() as $sub_hys)
+                                  <tr>
+                                    <td>{{$sub_hys->sub_id}}</td>
+                                    <td>{{$sub_hys->unit}}</td>
+                                    <td>{{$sub_hys->amount}}</td>
+                                    @if($sub_hys->status=="successful")
+                                    <td class="text-success">successful</td>
+                                    @elseif($sub_hys->status=="processing")
+                                    <td class="text-warning">processing</td>
+                                    @else
+                                    <td class="text-danger">Cancled</td>
+                                    @endif
+                                    <td>{{$sub_hys->created_at}}</td>
+                                  </tr>
+                                  @endforeach
+                                  @endif
                                 </tbody>
                             </table>
 
