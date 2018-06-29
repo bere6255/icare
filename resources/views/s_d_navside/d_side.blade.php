@@ -6,15 +6,16 @@
             <ul id="sidebarnav" class="p-t-30">
                 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/provider" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Dashboard</span></a></li>
                 @if(Auth::user()->subscribtion!="noo")
-                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/doc_prescribtion" aria-expanded="false"><i class="fas fa-notes-medical"></i><span class="hide-menu">Prescribtions</span></a></li>
-                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/seekers_request" aria-expanded="false"><i class="fas fa-stethoscope"></i><span class="hide-menu">Seekers Request</span></a></li>
-                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/transaction_hys" aria-expanded="false"><i class="fas fa-notes-medical"></i><span class="hide-menu">Transections</span></a></li>
+                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/doctors_booking" aria-expanded="false"><i class="fas fa-notes-medical"></i><span class="hide-menu">Seekers Bookings</span></a></li>
+                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/transaction_hys" aria-expanded="false"><i class="fas fa-columns"></i><span class="hide-menu">Transections</span></a></li>
+                                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/payout" aria-expanded="false"><i class="fas fa-credit-card"></i><span class="hide-menu">Pay Out</span></a></li>
                 <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="far fa-envelope"></i><span class="hide-menu">Message</span></a>
                     <ul aria-expanded="false" class="collapse  first-level">
-                        <li class="sidebar-item"><a href="" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Inbox </span></a></li>
+                        <li class="sidebar-item"><a href="/doctors_inbox" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Inbox </span></a></li>
                         <li class="sidebar-item"><a href="" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Unread </span></a></li>
                         <li class="sidebar-item"><a href="" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Sent </span></a></li>
                         <li class="sidebar-item"><a href="" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Trash </span></a></li>
+                        <li class="sidebar-item"><a href="/compose_message" class="sidebar-link "><i class="fas fa-comment-dots"></i><span class="hide-menu btn badge-pill badge-primary"> Compose </span></a></li>
                     </ul>
                 </li>
                 @endif

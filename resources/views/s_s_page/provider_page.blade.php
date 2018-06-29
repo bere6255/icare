@@ -29,7 +29,7 @@
                              </div>
                              <div class="el-card-content">
                                  <h4 class="m-b-0"><a href="/view_provider?id={{$provid->users_id}}">{{$provid->title}} {{$provid->first_name}} {{$provid->last_name}}</a></h4>
-                                 <span class="text-muted">{{$provid->about}}</span>
+                                 <span class="text-muted">{{str_limit($provid->about, $limit = 100, $end = '......')}}</span>
                              </div>
                          </div>
                      </div>

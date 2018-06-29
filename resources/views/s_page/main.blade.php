@@ -47,10 +47,12 @@
 @else
 <div class="row">
     <!-- Column -->
+    @if(count($sub)>0)
+        @foreach($sub->all() as $sub)
     <div class="col-md-6 col-lg-6 col-xlg-3">
         <div class="card card-hover">
             <div class="box bg-success text-center">
-                <h1 class="font-light text-white"><i> 0</i></h1>
+                <h1 class="font-light text-white"><i> {{$sub->unit}}</i></h1>
                 <h6 class="text-white">Available Unit</h6>
             </div>
         </div>
@@ -61,11 +63,12 @@
         <div class="card card-hover">
             <div class="box bg-warning text-center">
                 <h1 class="font-light text-white"><i>STANDARD</i></h1>
-                <h6 class="text-white">subscription</h6>
+                <h6 class="text-white">Subscription</h6>
             </div>
         </div>
     </div>
-
+@endforeach
+@endif
     <!-- Column -->
 
 
@@ -106,7 +109,7 @@
       <div class="col-md-8 col-lg-8 col-xlg-3">
         <div class="card">
               <div class="card-body">
-                  <h5 class="card-title m-b-0">My Bookings</h5>
+                  <a href="/seeker_viewbook"><h5 class="card-title m-b-0">My Bookings</h5></a>
               </div>
               <table class="table">
                     <thead>
@@ -114,25 +117,43 @@
                         <th scope="col">ID</th>
                         <th scope="col">Name</th>
                         <th scope="col">Reason</th>
-                        <th scope="col">Note</th>
                         <th scope="col">Status</th>
                         <th scope="col">Actions</th>
                       </tr>
                     </thead>
                     <tbody>
+                      @if(count($booking)>0)
+                      @foreach($booking->all() as $bookings)
                       <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
+                        <td>{{$bookings->request_ID}}</td>
+                        <td>{{$bookings->name}}</td>
+                        <td>{{$bookings->reason}}</td>
+                        @if($bookings->status=="successful")
+                        <td class="text-success">successful</td>
+                        @elseif($bookings->status=="processing")
+                        <td class="text-primary">processing</td>
+                        @elseif($bookings->status=="accepted")
+                        <td class="text-info">accepted</td>
+                        @else
+                        <td class="text-danger">Cancled</td>
+                        @endif
+                        <td>
+                          @if($bookings->status !="processing")
+                            @if($bookings->status !="rejected")
+                          <div class="btn-group">
+                        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</button>
+                        <div class="dropdown-menu" x-placement="top-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, -204px, 0px);">
+                          <a class="dropdown-item text-primary" href="#">Prescribtion</a>
+                          <a class="dropdown-item text-success" href="#">complated</a>
+                        </div>
+                          </div>
+                          @endif
+                          @endif
+                        </td>
                       </tr>
 
+                      @endforeach
+                      @endif
                     </tbody>
               </table>
           </div>

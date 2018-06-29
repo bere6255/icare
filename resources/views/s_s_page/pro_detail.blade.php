@@ -49,7 +49,9 @@
                               @csrf
                                 <div class="card-body">
                                     <h4 class="card-title">Booking form</h4>
-
+                                    @if (session('booking'))
+                    												<h4 class="btn-success ">{{ session('booking') }}</h4>
+                    								@endif
                                         <input type="hidden" name="id" value="{{$details->users_id}}">
                                         <input type="hidden" name="name" value="{{$details->first_name}} {{$details->last_name}}">
                                     <div class="form-group row">
@@ -67,7 +69,7 @@
                                 </div>
                                 <div class="border-top">
                                     <div class="card-body">
-                                        <button type="button" class="btn btn-primary badge-pill"><span class="fa fa-book"></span> Book Me</button>
+                                        <button class="btn btn-primary badge-pill"><span class="fa fa-book"></span> Book Me</button>
                                     </div>
                                 </div>
                             </form>

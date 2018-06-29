@@ -110,7 +110,7 @@
             <label for="country" class="form-label">Country</label>
 
               <div class="input-group">
-                <select id="country" name="country" onchange="ajax_call();" name="country" class="form-control" required="true">
+                <select id="country" name="country" onchange="ajax_call();" class="form-control" required="true">
                   <option value="">please select catigory</option>
                   @if(count($country)>0)
                       @foreach($country->all() as $country)

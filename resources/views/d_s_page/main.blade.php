@@ -14,7 +14,7 @@
     <!-- Column -->
     @if(count($account)>0)
         @foreach($account->all() as $account)
-    <div class="col-md-6 col-lg-6 col-xlg-3">
+    <div class="col-md-8 col-lg-8 col-xlg-3">
         <div class="card card-hover">
             <div class="box bg-success text-center">
                 <h1 class="font-light text-white"><i>₦ {{$account->aver_balance}}</i></h1>
@@ -24,7 +24,7 @@
     </div>
 
 
-    <div class="col-md-6 col-lg-6 col-xlg-3">
+    <div class="col-md-4 col-lg-4 col-xlg-3">
         <div class="card card-hover">
             <div class="box bg-warning text-center">
                 <h1 class="font-light text-white"><i>₦ {{$account->poten_balance}}</i></h1>
@@ -39,7 +39,7 @@
                         <div class="col-md-8 col-lg-8 col-xlg-3">
                           <div class="card">
                                 <div class="card-body">
-                                  <a href="/seekers_request"  <h5 class="card-title m-b-0">Booking Request</h5></a>
+                                  <a href="/doctors_booking"  <h5 class="card-title m-b-0">Booking Request</h5></a>
                                 </div>
                                 <table class="table">
                                       <thead>
@@ -47,30 +47,57 @@
                                           <th scope="col">ID</th>
                                           <th scope="col">Name</th>
                                           <th scope="col">Reason</th>
-                                          <th scope="col">Note</th>
                                           <th scope="col">Status</th>
                                           <th scope="col">Actions</th>
                                         </tr>
                                       </thead>
                                       <tbody>
+                                        @if(count($booking)>0)
+                                        @foreach($booking->all() as $bookings)
                                         <tr>
-                                          <th scope="row">1</th>
-                                          <td>Mark</td>
-                                          <td>Otto</td>
-                                          <td>@mdo</td>
+                                          <td>{{$bookings->request_ID}}</td>
+                                          <td>{{$bookings->name}}</td>
+                                          <td>{{$bookings->reason}}</td>
+                                          @if($bookings->status=="successful")
+                                          <td class="text-success">successful</td>
+                                          @elseif($bookings->status=="processing")
+                                          <td class="text-primary">processing</td>
+                                          @elseif($bookings->status=="accepted")
+                                          <td class="text-info">accepted</td>
+                                          @else
+                                          <td class="text-danger">Cancled</td>
+                                          @endif
+                                          <td>
+                                            @if($bookings->status != "rejected")
+                                          <div class="btn-group">
+                                        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</button>
+                                        <div class="dropdown-menu" x-placement="top-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, -204px, 0px);">
+
+                                          @if($bookings->status != "accepted")
+                                          <form method="post" enctype="form-data" action="/booking_accept">
+                                            @csrf
+                                            <input type="hidden" name="booking_id" value="{{$bookings->request_ID}}"/>
+                                          <button class="dropdown-item text-warning">Accept</button>
+                                          </form>
+                                          <form method="post" enctype="form-data" action="/booking_reject">
+                                            @csrf
+                                            <input type="hidden" name="booking_id" value="{{$bookings->request_ID}}"/>
+                                          <button class="dropdown-item text-danger">Reject</button>
+                                          </form>
+                                          @else
+                                          <a class="dropdown-item text-primary" href="/doc_prescribtion">Prescrib</a>
+                                          <a class="dropdown-item text-secondry" href="#">View details</a>
+                                          <a class="dropdown-item text-success" href="#">complated</a>
+                                          @endif
+
+                                          </div>
+                                          </div>
+                                        @endif
+                                        </td>
                                         </tr>
-                                        <tr>
-                                          <th scope="row">2</th>
-                                          <td>Jacob</td>
-                                          <td>Thornton</td>
-                                          <td>@fat</td>
-                                        </tr>
-                                        <tr>
-                                          <th scope="row">3</th>
-                                          <td>Larry</td>
-                                          <td>the Bird</td>
-                                          <td>@twitter</td>
-                                        </tr>
+
+                                        @endforeach
+                                        @endif
                                       </tbody>
                                 </table>
                             </div>
@@ -91,7 +118,6 @@
                                       </thead>
                                       <tbody>
                                         @if(count($acc_hys)>0)
-                                        {{$acc_hys->links()}}
                                         @foreach($acc_hys->all() as $acc_hys)
                                         <tr>
                                           <td>{{$acc_hys->transaction_ID}}</td>

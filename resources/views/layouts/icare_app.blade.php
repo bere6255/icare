@@ -12,10 +12,11 @@
     <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon.png">
     <title>ICare Nigeria</title>
     <!-- Custom CSS -->
-       
+
 
 
     <link href="../../assets/libs/flot/css/float-chart.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../../assets/libs/quill/dist/quill.snow.css">
     <!-- Custom CSS -->
     <link href="../../dist/css/style.min.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -103,7 +104,18 @@
     <!-- <script src="../../dist/js/pages/dashboards/dashboard1.js"></script> -->
     <!-- Charts js Files -->
     <script src="../../js/custom.js"></script>
+    <script src="../../js/nicEdit.js"></script>
     <script src="../../dist/js/pages/mask/mask.init.js"></script>
+    <script src="../../assets/libs/quill/dist/quill.min.js"></script>
+
+    <script>
+
+    bkLib.onDomLoaded(function() {
+          new nicEditor({fullPanel : true}).panelInstance('msg');
+     });
+
+       </script>
+
 
 
 </body>

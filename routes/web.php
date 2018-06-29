@@ -31,13 +31,19 @@ Route::post('/resend_activate', 'HomeController@resend_activate');
 Route::get('/provider_create', 'HomeController@create_provider');
 Route::get('/provider', 'providers@index')->name('provider');
 Route::get('/transaction_hys', 'providers@transac_hys');
-Route::get('/seekers_request', 'providers@seekers_req');
-Route::get('/doc_prescribtion', 'providers@prescrib');
+Route::get('/doctors_booking', 'providers@view_booking');
+Route::get('/doctors_inbox', 'providers@inbox');
+Route::get('/compose_message', 'providers@compose');
+Route::post('/api/pro_mgs', 'providers@send_mail');
+Route::get('/doc_prescribtion', 'providers@prescrib');// pending change
+Route::post('/booking_accept', 'providers@booking_accept');
+Route::post('/booking_reject', 'providers@booking_reject');
 //for seekers
 Route::get('/seekers_create', 'HomeController@create_seeker');
 Route::get('/s_dashboard', 'HomeController@seekers_dashboard');
 Route::get('/s_message', 'seekersController@message');
 Route::post('/bookings', 'seekersController@booking');
+Route::get('/seeker_viewbook', 'seekersController@view_booking');
 Route::get('/s_transec_hys', 'seekersController@transac_hys');
 Route::get('/load_provider', 'seekersController@provisers');
 Route::get('/view_provider', 'seekersController@view_provider');

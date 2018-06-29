@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class seekers extends Model
+class seeker extends Model
 {
     //
 }
