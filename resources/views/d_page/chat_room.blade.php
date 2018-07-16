@@ -6,7 +6,7 @@
   @include('s_d_navside.d_side')
 @endsection
 @section('content')
-  @include('d_s_page.inbox')
+  @include('d_s_page.chat')
 @endsection
 @section('foot')
   @include('s_d_navside.footer')

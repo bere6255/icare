@@ -1,7 +1,7 @@
 <div class="page-breadcrumb">
    <div class="row">
        <div class="col-12 d-flex no-block align-items-center">
-           <h4 class="page-title">Welcome to iCare</h4>
+           <h4 class="page-title">Transaction Hystory</h4>
 
        </div>
    </div>
@@ -13,7 +13,7 @@
 
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title m-b-0">Subscribtion Hystry</h4>
+                                <h4 class="card-title m-b-0">Transaction Hystory</h4>
                             </div>
                             <table class="table">
                                 <thead>
@@ -49,4 +49,3 @@
 
     </div>
   </div>
-</div>

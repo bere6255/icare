@@ -18,8 +18,11 @@ class seekersController extends Controller
       $this->middleware('auth');
   }
 
-    public function message(){
-      return view('s_page.message');
+    public function chat(){
+      $provider=[];
+      $seeker = DB::table('seekers_details')->where('email', '=', Auth::user()->email)->get();
+
+      return view('s_page.chat_room',['seeker'=>$seeker,'provider'=>$provider]);
     }
     public function msg_sent(){
       return view('s_page.msg_sent');
@@ -35,8 +38,10 @@ class seekersController extends Controller
       if (Auth::user()->subscribtion!="seeker") {
         return redirect('/home');
       }
+      $provider=[];
+      $seeker = DB::table('seekers_details')->where('email', '=', Auth::user()->email)->get();
       $providers = DB::table('providers')->inRandomOrder()->paginate(12);
-      return view('s_page.s_providers',['providers'=>$providers]);
+      return view('s_page.s_providers',['providers'=>$providers, 'seeker'=>$seeker,'provider'=>$provider]);
     }
     public function view_provider(Request $request){
       if (Auth::user()->subscribtion!="seeker") {
@@ -48,7 +53,9 @@ class seekersController extends Controller
        $id = $request->get('id');
       $provid = DB::table('providers')->where('users_id', '=', $id)->get();
       if (count($provid)>0) {
-      return view('s_page.provider_detail',['details'=>$provid]);
+        $provider=[];
+        $seeker = DB::table('seekers_details')->where('email', '=', Auth::user()->email)->get();
+      return view('s_page.provider_detail',['details'=>$provid,'seeker'=>$seeker,'provider'=>$provider]);
       } else {
       return redirect('/load_provider');
       }
@@ -58,14 +65,18 @@ class seekersController extends Controller
       if (Auth::user()->subscribtion!="seeker") {
         return redirect('/home');
       }
-      return view('s_page.s_prescription');
+      $provider=[];
+      $seeker = DB::table('seekers_details')->where('email', '=', Auth::user()->email)->get();
+      return view('s_page.s_prescription', ['seeker'=>$seeker,'provider'=>$provider]);
     }
     public function transac_hys(){
       if (Auth::user()->subscribtion!="seeker") {
         return redirect('/home');
       }
+      $provider=[];
+      $seeker = DB::table('seekers_details')->where('email', '=', Auth::user()->email)->get();
       $sub_hys = DB::table('subcription_hys')->where('email', '=', Auth::user()->email)->latest()->paginate(10);
-      return view('s_page.transac_hys', ['sub_hys'=>$sub_hys]);
+      return view('s_page.transac_hys', ['sub_hys'=>$sub_hys,'seeker'=>$seeker,'provider'=>$provider]);
     }
     public function booking(Request $request){
       if (Auth::user()->subscribtion!="seeker") {
@@ -103,7 +114,8 @@ class seekersController extends Controller
         return redirect('/home');
       }
       $booking = DB::table('bookings')->where('seeker', '=', Auth::user()->email)->latest()->paginate(10);
-
-      return view('s_page.bookings',['booking'=>$booking]);
+      $provider=[];
+      $seeker = DB::table('seekers_details')->where('email', '=', Auth::user()->email)->get();
+      return view('s_page.bookings',['booking'=>$booking,'provider'=>$provider,'seeker'=>$seeker]);
     }
 }

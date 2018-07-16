@@ -5,6 +5,7 @@ use Auth;
 use App\subcription;
 use Illuminate\Support\Facades\Validator;
 use App\country;
+use App\seekers_details;
 use App\state;
 use App\subcription_hys;
 use App\providers;
@@ -79,17 +80,17 @@ class HomeController extends Controller
             DB::table('subcription_hys')->where('email', '=', $user['email'])->where('sub_id', '=', $trans_id)->update(['status' => "successful"]);
             $sub =DB::table('subcriptions')->where('email', '=', $user['email'])->latest()->get();
             switch ($amount) {
-              case 300000:
-                $unit = $sub[0]->unit+5;
+              case 100000:
+                $unit = $sub[0]->unit+1;
                 break;
-              case 600000:
-                  $unit = $sub[0]->unit+10;
-                  break;
-              case 900000:
-                  $unit = $sub[0]->unit+15;
-                  break;
-              case 1200000:
+              case 1700000:
                   $unit = $sub[0]->unit+20;
+                  break;
+              case 4500000:
+                  $unit = $sub[0]->unit+60;
+                  break;
+              case 7200000:
+                  $unit = $sub[0]->unit+120;
                 break;
               default:
               $unit = $sub[0]->unit+0;
@@ -118,11 +119,13 @@ class HomeController extends Controller
       }elseif (Auth::user()->subscribtion=="admin") {
           return redirect('admin');
       }else{
+        $provider=[];
+        $seeker = DB::table('seekers_details')->where('email', '=', Auth::user()->email)->get();
           $mail_sent=0;
          $sub = DB::table('subcriptions')->where('email', '=', Auth::user()->email)->get();
          $sub_hys = DB::table('subcription_hys')->where('email', '=', Auth::user()->email)->latest()->get();
          $booking = DB::table('bookings')->where('seeker', '=', Auth::user()->email)->latest()->limit(5)->get();
-         return view('home',['sub'=>$sub,'sub_hys'=>$sub_hys,'mail_sent'=>$mail_sent,'booking'=>$booking]);
+         return view('home',['sub'=>$sub,'sub_hys'=>$sub_hys,'mail_sent'=>$mail_sent,'booking'=>$booking,'provider'=>$provider,'seeker'=>$seeker]);
         }
     }
     public function create_seeker(){
@@ -135,6 +138,24 @@ class HomeController extends Controller
         $sub->sub_type ='standard';
         $sub->save();
         DB::table('users')->where('email',$user->email )->update(['subscribtion' => "seeker"]);
+        $seek = new seekers_details;
+        $seek->email=$user->email;
+        $seek->users_id=$user->users_id;
+        $seek->title="noo";
+        $seek->gender="noo";
+        $seek->first_name="noo";
+        $seek->last_name="noo";
+        $seek->phone="noo";
+        $seek->blood_group="noo";
+        $seek->genotype="noo";
+        $seek->age="noo";
+        $seek->asthmatic="noo";
+        $seek->epileptic="noo";
+        $seek->operation="noo";
+        $seek->allergic="noo";
+        $seek->weigh="noo";
+        $seek->img="avatar-2.jpg";
+        $seek->save();
         return view('s_page.pricing');
       } else {
         return redirect('home');
@@ -229,7 +250,12 @@ class HomeController extends Controller
     }
 
     public function pricing () {
-        return view('s_page.pricing');
+      if (!Auth::user()) {
+        return redirect('/login');
+      }
+      $provider=[];
+      $seeker = DB::table('seekers_details')->where('email', '=', Auth::user()->email)->get();
+        return view('s_page.pricing',['seeker'=>$seeker,'provider'=>$provider]);
     }
 
 }

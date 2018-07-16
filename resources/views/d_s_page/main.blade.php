@@ -16,7 +16,7 @@
         @foreach($account->all() as $account)
     <div class="col-md-8 col-lg-8 col-xlg-3">
         <div class="card card-hover">
-            <div class="box bg-success text-center">
+            <div class="box bg-info text-center">
                 <h1 class="font-light text-white"><i>₦ {{$account->aver_balance}}</i></h1>
                 <h6 class="text-white">Available Balance</h6>
             </div>
@@ -26,7 +26,7 @@
 
     <div class="col-md-4 col-lg-4 col-xlg-3">
         <div class="card card-hover">
-            <div class="box bg-warning text-center">
+            <div class="box bg-primary text-center">
                 <h1 class="font-light text-white"><i>₦ {{$account->poten_balance}}</i></h1>
                 <h6 class="text-white">Potential Balance</h6>
             </div>

@@ -11,14 +11,7 @@
                 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/s_prescribtions" aria-expanded="false"><i class="fas fa-notes-medical"></i><span class="hide-menu">Prescribtions</span></a></li>
                 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/s_transec_hys" aria-expanded="false"><i class="fas fa-columns"></i><span class="hide-menu">Transections</span></a></li>
                                 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/pricing" aria-expanded="false"><i class="fas fa-money-bill-alt"></i><span class="hide-menu">subscriptions</span></a></li>
-                <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="far fa-envelope"></i><span class="hide-menu">Message</span></a>
-                    <ul aria-expanded="false" class="collapse  first-level">
-                        <li class="sidebar-item"><a href="" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Inbox </span></a></li>
-                        <li class="sidebar-item"><a href="" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Unread </span></a></li>
-                        <li class="sidebar-item"><a href="" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Sent </span></a></li>
-                        <li class="sidebar-item"><a href="" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Trash </span></a></li>
-                    </ul>
-                </li>
+                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/seekers_chatroom" aria-expanded="false"><i class="far fa-comments"></i><span class="hide-menu"> Chart Room </span></a></li>
                 @endif
             </ul>
         </nav>

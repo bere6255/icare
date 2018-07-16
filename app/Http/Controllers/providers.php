@@ -80,7 +80,7 @@ class providers extends Controller
           $unit = $sub[0]->unit-1;
           DB::table('subcriptions')->where('email', '=', $check[0]->seeker)->update(['unit' => $unit]);
           $acc =DB::table('accounts')->where('email', '=', $user['email'])->latest()->get();
-          $pote_bala = $acc[0]->poten_balance +291;
+          $pote_bala = $acc[0]->poten_balance +400;
           DB::table('accounts')->where('email', '=', $user['email'])->update(['poten_balance' => $pote_bala]);
             DB::table('bookings')->where('request_ID', $booking_id)->update(['status' => "accepted"]);
           return back();
@@ -109,9 +109,9 @@ class providers extends Controller
       }
     }
 
-    public function inbox(){
+    public function chat_room(){
       $provider = DB::table('providers')->where('email', '=', Auth::user()->email)->get();
-      return view('d_page.message_inbox',['provider'=>$provider]);
+      return view('d_page.chat_room',['provider'=>$provider]);
     }
     public function compose(){
       $user= Auth::user();

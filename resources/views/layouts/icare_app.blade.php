@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon.png">
-    <title>ICare Nigeria</title>
+    <title>Ecare Nigeria</title>
     <!-- Custom CSS -->
 
 

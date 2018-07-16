@@ -79,4 +79,3 @@
             </div>
             @endforeach
           @endif
-          </div>
