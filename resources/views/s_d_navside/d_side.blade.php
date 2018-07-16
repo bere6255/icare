@@ -8,8 +8,8 @@
                 @if(Auth::user()->subscribtion!="noo")
                 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/doctors_booking" aria-expanded="false"><i class="fas fa-notes-medical"></i><span class="hide-menu">Seekers Bookings</span></a></li>
                 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/transaction_hys" aria-expanded="false"><i class="fas fa-columns"></i><span class="hide-menu">Transections</span></a></li>
-                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/payout" aria-expanded="false"><i class="fas fa-credit-card"></i><span class="hide-menu">Pay Out</span></a></li>
                 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/doctors_chatroom" aria-expanded="false"><i class="far fa-comments"></i><span class="hide-menu"> Chart Room </span></a></li>
+                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/payout" aria-expanded="false"><i class="fas fa-credit-card"></i><span class="hide-menu">Pay Out</span></a></li>
                 @endif
             </ul>
         </nav>
