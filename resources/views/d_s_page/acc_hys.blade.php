@@ -14,7 +14,7 @@
 
                           <div class="card">
                               <div class="card-body">
-                                  <h4 class="card-title m-b-0">Subscribtion Hystry</h4>
+                                  <h4 class="card-title m-b-0">Transaction Hystry</h4>
                               </div>
                               <table class="table">
                                   <thead>

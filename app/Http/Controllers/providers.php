@@ -60,7 +60,8 @@ class providers extends Controller
         return redirect('/home');
       }
       $provider = DB::table('providers')->where('email', '=', Auth::user()->email)->get();
-      return view('d_page.prescribtion',['provider'=>$provider]);
+      $booking = DB::table('bookings')->where('provider', '=', Auth::user()->email)->get();
+      return view('d_page.prescribtion',['provider'=>$provider, 'booking'=>$booking]);
     }
 
     public function booking_accept(Request $request){
@@ -146,6 +147,14 @@ class providers extends Controller
        $msg->save();
 
       return ;
+    }
+
+    public function profile(){
+      if (Auth::user()->subscribtion!="provider") {
+        return redirect('/home');
+      }
+      $provider = DB::table('providers')->where('email', '=', Auth::user()->email)->get();
+      return view('d_page.profile',['provider'=>$provider]);
     }
 
 }

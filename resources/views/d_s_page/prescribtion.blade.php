@@ -16,30 +16,8 @@
                             <form class="form-horizontal">
                                 <div class="card-body">
                                     <h4 class="card-title">Prescriptions</h4>
-                                    <div class="form-group row">
-                                        <label for="fname" class="col-sm-3 text-right control-label col-form-label">First Name</label>
-                                        <div class="col-sm-9">
-                                            <input type="text" class="form-control" id="fname" placeholder="First Name Here">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="lname" class="col-sm-3 text-right control-label col-form-label">Last Name</label>
-                                        <div class="col-sm-9">
-                                            <input type="text" class="form-control" id="lname" placeholder="Last Name Here">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="lname" class="col-sm-3 text-right control-label col-form-label">Password</label>
-                                        <div class="col-sm-9">
-                                            <input type="password" class="form-control" id="lname" placeholder="Password Here">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="email1" class="col-sm-3 text-right control-label col-form-label">Company</label>
-                                        <div class="col-sm-9">
-                                            <input type="text" class="form-control" id="email1" placeholder="Company Name Here">
-                                        </div>
-                                    </div>
+
+                                    
                                     <div class="form-group row">
                                         <label for="cono1" class="col-sm-3 text-right control-label col-form-label">Contact No</label>
                                         <div class="col-sm-9">

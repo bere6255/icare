@@ -24,16 +24,17 @@ class seekersController extends Controller
 
       return view('s_page.chat_room',['seeker'=>$seeker,'provider'=>$provider]);
     }
-    public function msg_sent(){
-      return view('s_page.msg_sent');
-    }
-    public function msg_trash(){
+    public function profile(){
+      if (Auth::user()->subscribtion!="seeker") {
+        return redirect('/home');
+      }
+      $provider=[];
+      $seeker = DB::table('seekers_details')->where('email', '=', Auth::user()->email)->get();
+      $providers = DB::table('providers')->inRandomOrder()->paginate(12);
+      return view('s_page.profile',['seeker'=>$seeker,'provider'=>$provider]);
 
-      return view('s_page.msg_trash');
     }
-    public function msg_compose(){
-      return view('s_page.msg_compose');
-    }
+
     public function provisers(){
       if (Auth::user()->subscribtion!="seeker") {
         return redirect('/home');

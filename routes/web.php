@@ -34,6 +34,7 @@ Route::get('/transaction_hys', 'providers@transac_hys');
 Route::get('/doctors_booking', 'providers@view_booking');
 Route::get('/doctors_chatroom', 'providers@chat_room');
 Route::get('/compose_message', 'providers@compose');
+Route::get('/d_profile', 'providers@profile');
 Route::post('/api/pro_mgs', 'providers@send_mail');
 Route::get('/doc_prescribtion', 'providers@prescrib');// pending change
 Route::post('/booking_accept', 'providers@booking_accept');
@@ -48,6 +49,4 @@ Route::get('/s_transec_hys', 'seekersController@transac_hys');
 Route::get('/load_provider', 'seekersController@provisers');
 Route::get('/view_provider', 'seekersController@view_provider');
 Route::get('/s_prescribtions', 'seekersController@prescriptions');
-Route::get('/s_message/sent', 'seekersController@msg_sent');
-Route::get('/s_message/trash', 'seekersController@msg_trash');
-Route::get('/s_message/compose', 'seekersController@msg_compose');
+Route::get('/s_profile', 'seekersController@profile');
