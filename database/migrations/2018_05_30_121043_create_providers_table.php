@@ -23,11 +23,13 @@ class CreateProvidersTable extends Migration
             $table->string('last_name');
             $table->string('phone');
             $table->string('address');
+            $table->string('mdcn');
             $table->string('country');
             $table->string('state');
             $table->string('about');
             $table->string('verification');
             $table->string('activation');
+            $table->string('mdcn_file');
             $table->string('img');
             $table->timestamps();
         });

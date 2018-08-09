@@ -14,7 +14,7 @@
               <div class="col-lg-4">
                 <div class="card card-profile">
                   <div class="card-body text-center">
-                    <img class="card-profile-img" src="{{Storage::url($details->img)}}">
+                    <div class="text-center"><img src="{{Storage::url($details->img)}}" alt="user" width="75%" class="rounded-circle"></div>
                     <h3 class="mb-3">{{$details->title}} {{$details->first_name}} {{$details->last_name}}</h3>
                     <p class="mb-4">
                       {{$details->state}}
@@ -55,7 +55,7 @@
                                         <input type="hidden" name="id" value="{{$details->users_id}}">
                                         <input type="hidden" name="name" value="{{$details->first_name}} {{$details->last_name}}">
                                     <div class="form-group row">
-                                        <label for="reason" class="col-sm-3 text-right control-label col-form-label">Reason</label>
+                                        <label for="reason" class="col-sm-3 text-right control-label col-form-label">Purpose</label>
                                         <div class="col-sm-9">
                                             <input type="text" name="reason" class="form-control" id="reason" placeholder="State the reason for this booking" required="true">
                                         </div>

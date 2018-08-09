@@ -21,11 +21,10 @@
       <div class="row">
         <div class="col-md-3">
           <div class="form-group">
-            <label for="title" class="form-label">Title</label>
-            <select id="title" name="title" class="form-control custom-select">
-              <option value="Dr">Dr</option>
-              <option value="Pr">Pr</option>
-            </select>
+            <div class="form-group">
+              <label for="title" class="form-label">Title</label>
+              <input id="title" name="title" type="text" class="form-control" placeholder="Specialization" required="true">
+            </div>
           </div>
           <div class="input-group">
             @if ($errors->has('title'))
@@ -37,11 +36,10 @@
         </div>
         <div class="col-md-4">
           <div class="form-group">
-            <label for="spec" class="form-label">Specialty</label>
-            <select id="spec" name="specialty" class="form-control custom-select">
-              <option value="Dr">Dr</option>
-              <option value="Pr">Pr</option>
-            </select>
+            <div class="form-group">
+              <label for="spec" class="form-label">Specialty</label>
+              <input id="spec" name="spec" type="text" class="form-control" placeholder="Specialization" required="true">
+            </div>
 
           </div>
           <div class="input-group">
@@ -92,7 +90,7 @@
             @endif
           </div>
         </div>
-        <div class="col-md-12">
+        <div class="col-md-6">
           <div class="form-group">
             <label for="add" class="form-label">Address</label>
             <input id="add" name="address" type="text" class="form-control" placeholder="Home Address" required="true">
@@ -101,6 +99,19 @@
             @if ($errors->has('address'))
                 <span class="btn table-danger">
                     <strong>{{ $errors->first('address') }}</strong>
+                </span>
+            @endif
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="MDCN" class="form-label">MDCN Number</label>
+            <input id="MDCN" name="MDCN" type="text" class="form-control" placeholder="MDCN Folio Number" required="true">
+          </div>
+          <div class="input-group">
+            @if ($errors->has('MDCN'))
+                <span class="btn table-danger">
+                    <strong>{{ $errors->first('MDCN') }}</strong>
                 </span>
             @endif
           </div>
@@ -149,6 +160,19 @@
                 @endif
               </div>
             </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-6">
+          <div class="form-group">
+            <label for="last" class="form-label">Profile Picture</label>
+            <input id="img" name="img" type="file" class="form-control" required="true">
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-6">
+          <div class="form-group">
+            <label for="last" class="form-label">MDCN License</label>
+            <input id="MDCN_L" name="MDCN_L" type="file" class="form-control" required="true">
           </div>
         </div>
 

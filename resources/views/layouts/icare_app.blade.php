@@ -88,6 +88,7 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
+
     <script src="../../assets/libs/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
     <script src="../../assets/libs/popper.js/dist/umd/popper.min.js"></script>
@@ -104,17 +105,9 @@
     <!-- <script src="../../dist/js/pages/dashboards/dashboard1.js"></script> -->
     <!-- Charts js Files -->
     <script src="../../js/custom.js"></script>
-    <script src="../../js/nicEdit.js"></script>
     <script src="../../dist/js/pages/mask/mask.init.js"></script>
     <script src="../../assets/libs/quill/dist/quill.min.js"></script>
 
-    <script>
-
-    bkLib.onDomLoaded(function() {
-          new nicEditor({fullPanel : true}).panelInstance('msg');
-     });
-
-       </script>
 
 
 

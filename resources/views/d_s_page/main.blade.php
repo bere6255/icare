@@ -1,7 +1,7 @@
 <div class="page-breadcrumb">
    <div class="row">
        <div class="col-12 d-flex no-block align-items-center">
-           <h4 class="page-title">Welcome to iCare</h4>
+           <h4 class="page-title">Welcome to Ecare</h4>
 
        </div>
    </div>
@@ -85,8 +85,8 @@
                                           <button class="dropdown-item text-danger">Reject</button>
                                           </form>
                                           @else
-                                          <a class="dropdown-item text-primary" href="/doc_prescribtion">Prescrib</a>
-                                          <a class="dropdown-item text-secondry" href="#">View details</a>
+                                          <a class="dropdown-item text-primary" href="d_prescribtions?booking_id={{$bookings->request_ID}}">Prescrib</a>
+                                          <a class="dropdown-item text-secondry" href="/seekers_details?ID={{$bookings->request_ID}}">View details</a>
                                           <a class="dropdown-item text-success" href="#">complated</a>
                                           @endif
 
@@ -106,7 +106,7 @@
                           <div class="col-md-4 col-lg-4 col-xlg-3">
                             <div class="card">
                                 <div class="card-body">
-                                <a href="/transaction_hys"    <h5 class="card-title m-b-0">Transaction Hystry</h5></a>
+                                <a href="/transaction_hys"    <h5 class="card-title m-b-0">Transaction History</h5></a>
                                 </div>
                                 <table class="table">
                                       <thead>

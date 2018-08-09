@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 use Auth;
 use App\mgs;
+use App\country;
+use App\prescription;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 
 class providers extends Controller
@@ -54,21 +57,51 @@ class providers extends Controller
       $booking = DB::table('bookings')->where('provider', '=', Auth::user()->email)->latest()->paginate(10);
       return view('d_page.bookings',['booking'=>$booking,'provider'=>$provider]);
     }
-
-    public function prescrib(){
+    public function post_prescrib(Request $request){
       if (Auth::user()->subscribtion!="provider") {
         return redirect('/home');
       }
-      $provider = DB::table('providers')->where('email', '=', Auth::user()->email)->get();
-      $booking = DB::table('bookings')->where('provider', '=', Auth::user()->email)->get();
-      return view('d_page.prescribtion',['provider'=>$provider, 'booking'=>$booking]);
+      $this->Validate($request, [
+         'booking_id'=> 'string',
+         'exam'=>'string',
+         'comment'=>'string'
+       ]);
+      $img_name1= "prescrib_".md5("bereobong").".jpg";
+       if ($request->hasFile('file1')) {
+         $request->file('file_1');
+         $request->file_1->store('public',$img_name1);
+
+       }
+       $booking = DB::table('bookings')->where('request_ID', '=', $request->input('booking_id'))->get();
+       $pre = new prescription;
+       $pre->provider_email =Auth::user()->email;
+       $pre->seeker_mail =$booking[0]->seeker;
+       $pre->booking_id =$request->input('booking_id');
+       $pre->examination =$request->input('exam');
+       $pre->file_1 =$img_name1;
+       $pre->comment =$request->input('comment');
+       $pre->save();
+       return back()->with('prescrib','Prescrib successful');
+
+    }
+    public function prescrib(Request $request){
+      if (Auth::user()->subscribtion!="provider") {
+        return redirect('/home');
+      }
+      $booking=$request->get('booking_id');
+      if (!empty($booking)) {
+        $provider = DB::table('providers')->where('email', '=', Auth::user()->email)->get();
+        return view('d_page.prescribtion',['provider'=>$provider, 'booking'=>$booking]);
+      }
+      return redirect('/doctors_booking');
     }
 
     public function booking_accept(Request $request){
       $user= Auth::user();
-      if (Auth::user()->subscribtion!="provider") {
+      if (Auth::user()->subscribtion !="provider") {
         return redirect('/home');
       }
+
       $this->Validate($request, [
          'booking_id'=> 'string'
        ]);
@@ -111,44 +144,67 @@ class providers extends Controller
     }
 
     public function chat_room(){
-      $provider = DB::table('providers')->where('email', '=', Auth::user()->email)->get();
-      return view('d_page.chat_room',['provider'=>$provider]);
+      if (Auth::user()->subscribtion!="provider") {
+        return redirect('/home');
+      }
+      $user= Auth::user();
+      $provider = DB::table('providers')->where('email', '=', $user['email'])->get();
+      $booking = DB::table('bookings')->where('provider', '=', $user['email'])->where('status', '=', "accepted")->latest()->get();
+      return view('d_page.chat_room',['reciever'=>$booking,'provider'=>$provider]);
     }
-    public function compose(){
+
+////working here
+
+
+    public function viewseek(Request $request){
+      $id = $request->get('ID');
+      $booking = DB::table('bookings')->where('request_ID', '=', $id)->get();
+      $s_pres = DB::table('prescriptions')->where('seeker_mail', '=', $booking[0]->seeker)->latest()->paginate(10);
+      $s_detail = DB::table('seekers_details')->where('email', '=', $booking[0]->seeker)->get();
       $user= Auth::user();
       $provider = DB::table('providers')->where('email', '=', Auth::user()->email)->get();
-      $booking = DB::table('bookings')->where('provider', '=', $user['email'])->where('status', '=', "accepted")->latest()->get();
-      return view('d_page.message_compose',['reciever'=>$booking,'provider'=>$provider]);
+      return view('d_page.seekers_details',['provider'=>$provider,'s_pres'=>$s_pres,'s_details'=>$s_detail]);
     }
-    public function send_mail(Request $request){
-      $this->Validate($request, [
-         'subject'=> 'string',
-         'reciever'=>'string',
-         'msg'=>'string'
+    public function update_profile(){
+      if (Auth::user()->subscribtion!="provider") {
+        return redirect('/home');
+      }
+      $country = country::all();
+      $provider = DB::table('providers')->where('email', '=', Auth::user()->email)->get();
+      return view('d_page.update_profile',['provider'=>$provider,'country'=>$country]);
+
+    }
+    public function post_profile(Request $request){
+      if (Auth::user()->subscribtion!="provider") {
+        return redirect('/home');
+      }$this->Validate($request, [
+         'title'=> 'required|string',
+         'spec'=>'required|string',
+         'first_name'=> 'required|string',
+         'last_name'=>'required|string',
+         'phone'=> 'required|string',
+         'address'=>'required|string',
+         'MDCN'=>'required|string',
+         'country'=> 'required|string',
+         'state'=>'required|string',
+         'about'=>'required|string'
        ]);
-       $user= Auth::user();
-       $subject = $request->input('subject');
-       $reciever = $request->input('reciever');
-       $msg = $request->input('msg');
-       $booking = DB::table('bookings')->where('request_ID', '=', $reciever)->get();
-
-       $msg = new mgs;
-       $msg->seeker=$booking[0]->seeker;
-       $msg->provider=$booking[0]->provider;
-       $msg->msg_ID=$booking[0]->request_ID;
-       $msg->title=$subject;
-       $msg->msg=$msg;
-       $msg->img1="comming soon";
-       $msg->img2="comming soon";
-       $msg->img3="comming soon";
-       $msg->status="new";
-       $msg->seeker_action="noo";
-       $msg->provider_action="noo";
-       $msg->save();
-
-      return ;
+       $img_name= "provider_".md5("bereobong").".jpg";
+       $mdcn_name= "mdcn_".md5("bereobong").".jpg";
+        if ($request->hasFile('img')) {
+          $request->file('img');
+          $request->file('img')->storeAs('public',$img_name);
+        }if ($request->hasFile('MDCN_L')) {
+          $request->file('MDCN_L');
+          $request->file('MDCN_L')->storeAs('public',$mdcn_name);
+        }
+        DB::table('providers')->where('email', '=', Auth::user()->email)->update(['title' => $request->input('title'),
+        'specialty'=>$request->input('spec'),'first_name'=>$request->input('first_name'),'last_name'=>$request->input('last_name'),
+        'phone'=>$request->input('phone'),'address'=>$request->input('address'),'mdcn'=>$request->input('MDCN'),
+        'country'=>$request->input('country'),'state'=>$request->input('state'),'about'=>$request->input('about'),
+        'mdcn_file'=>$mdcn_name,'img'=>$img_name]);
+        return redirect('/d_profile');
     }
-
     public function profile(){
       if (Auth::user()->subscribtion!="provider") {
         return redirect('/home');

@@ -51,7 +51,7 @@
                                         <div class="btn-group">
                                       <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</button>
                                       <div class="dropdown-menu" x-placement="top-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, -204px, 0px);">
-                                        <a class="dropdown-item text-primary" href="#">Prescribtion</a>
+                                        <a class="dropdown-item text-primary" href="s_prescribtions?booking_id={{$bookings->request_ID}}">Prescribtion</a>
                                         <a class="dropdown-item text-success" href="#">complated</a>
                                       </div>
                                         </div>

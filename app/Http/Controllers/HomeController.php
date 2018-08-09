@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Validator;
 use App\country;
 use App\seekers_details;
 use App\state;
+use App\livechat;
 use App\subcription_hys;
 use App\providers;
 use App\account;
@@ -137,6 +138,10 @@ class HomeController extends Controller
         $sub->users_id = $user->users_id;
         $sub->sub_type ='standard';
         $sub->save();
+        $livchat = new livechat;
+        $livchat->user =$user->email;
+        $livchat->chat_id="noo";
+        $livchat->save();
         DB::table('users')->where('email',$user->email )->update(['subscribtion' => "seeker"]);
         $seek = new seekers_details;
         $seek->email=$user->email;
@@ -156,7 +161,7 @@ class HomeController extends Controller
         $seek->weigh="noo";
         $seek->img="avatar-2.jpg";
         $seek->save();
-        return view('s_page.pricing');
+        return redirect('/pricing');
       } else {
         return redirect('home');
         // this is for creation of Seekers
@@ -166,7 +171,8 @@ class HomeController extends Controller
 
     public function create_provider(){
       $country = country::all();
-      return view('d_page.doc_reg_form',['country'=>$country]);
+      $provider=[];
+      return view('d_page.doc_reg_form',['country'=>$country,'provider'=>$provider,'seeker'=>$provider]);
       // this is for creating provider
     }
     public function seekers_dashboard(){
@@ -205,33 +211,52 @@ class HomeController extends Controller
     public function provider_request(Request $request){
       $this->Validate($request, [
          'title'=> 'required|string',
-         'specialty'=>'required|string',
+         'spec'=>'required|string',
          'first_name'=> 'required|string',
          'last_name'=>'required|string',
          'phone'=> 'required|string',
          'address'=>'required|string',
+         'MDCN'=>'required|string',
          'country'=> 'required|string',
          'state'=>'required|string',
          'about'=>'required|string'
        ]);
+       $img_name= "provider_".md5("bereobong").".jpg";
+       $mdcn_name= "mdcn_".md5("bereobong").".jpg";
+        if ($request->hasFile('img')) {
+          $request->file('img');
+          $request->file('img')->storeAs('public',$img_name);
+
+        }
+        if ($request->hasFile('MDCN_L')) {
+          $request->file('MDCN_L');
+          $request->file('MDCN_L')->storeAs('public',$mdcn_name);
+
+        }
        $previder = new providers;
        $previder->email=Auth::user()->email;
        $previder->users_id=Auth::user()->users_id;
        $previder->title=$request->input('title');
-       $previder->specialty=$request->input('specialty');
+       $previder->specialty=$request->input('spec');
        $previder->first_name=$request->input('first_name');
        $previder->last_name=$request->input('last_name');
        $previder->phone=$request->input('phone');
        $previder->address=$request->input('address');
+       $previder->mdcn=$request->input('MDCN');
        $previder->country=$request->input('country');
        $previder->state=$request->input('state');
        $previder->about=$request->input('about');
        $previder->verification="unverify";
        $previder->activation="unactivated";
-       $previder->img="image url will be at this point";
+       $previder->mdcn_file=$mdcn_name;
+       $previder->img=$img_name;
        $previder->save();
        $user=Auth::user();
        if ($user->subscribtion=="noo") {
+         $livchat = new livechat;
+         $livchat->user =$user->email;
+         $livchat->chat_id="noo";
+         $livchat->save();
        $acc = new account;
        $acc->email = $user->email;
        $acc->users_id = $user->users_id;

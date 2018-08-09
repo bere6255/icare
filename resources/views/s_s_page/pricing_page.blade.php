@@ -16,7 +16,7 @@
   <div class="col-sm-3 col-xl-3">
     <div class="card">
       <div class="card-body text-center">
-        <div class="card-category">1 Unit Standard Plan</div>
+        <div class="card-category">1 Unit Basic Plan</div>
         <div class="display-6 my-4">₦ 1,000</div>
         <ul class="list-unstyled leading-loose">
           <li><i class="fa fa-check text-danger mr-2" aria-hidden="true"></i> 1 Booking Request</li>
@@ -45,7 +45,18 @@
   <div class="col-sm-3 col-xl-3">
     <div class="card">
       <div class="card-body text-center">
-        <div class="card-category">20 Unit Standard Plan</div>
+        <div class="card-category">1 Month Plan</div>
+        <div class="form-group row" data-select2-id="12">
+                                    <div class="col-md-12" data-select2-id="11">
+                                        <select class="select2 form-control custom-select select2-hidden-accessible" style="width: 100%; height:36px;" data-select2-id="1" tabindex="-1" aria-hidden="true">
+                                            <option data-select2-id="3">Select Unit</option>
+                                            <option value="AK" data-select2-id="17">3 Unit</option>
+                                            <option value="HI" data-select2-id="18">6 Unit</option>
+                                            <option value="HI" data-select2-id="18">12 Unit</option>
+                                            <option value="HI" data-select2-id="18">20 Unit</option>
+                                        </select>
+                                      </div>
+                                </div>
         <div class="display-6 my-4">₦ 17,000</div>
         <ul class="list-unstyled leading-loose">
           <li><i class="fa fa-check text-warning mr-2" aria-hidden="true"></i> 20 Booking Request</li>
@@ -75,7 +86,18 @@
   <div class="col-sm-3 col-xl-3">
     <div class="card">
       <div class="card-body text-center">
-        <div class="card-category">60 Unit Standard Plan</div>
+        <div class="card-category">6 month Plan</div>
+        <div class="form-group row" data-select2-id="12">
+                                    <div class="col-md-12" data-select2-id="11">
+                                        <select class="select2 form-control custom-select select2-hidden-accessible" style="width: 100%; height:36px;" data-select2-id="1" tabindex="-1" aria-hidden="true">
+                                            <option data-select2-id="3">Select Unit</option>
+                                            <option value="AK" data-select2-id="17">3 Unit</option>
+                                            <option value="HI" data-select2-id="18">6 Unit</option>
+                                            <option value="HI" data-select2-id="18">12 Unit</option>
+                                            <option value="HI" data-select2-id="18">20 Unit</option>
+                                        </select>
+                                      </div>
+                                </div>
         <div class="display-6 my-4">₦ 45,000</div>
         <ul class="list-unstyled leading-loose">
           <li><i class="fa fa-check text-primary mr-2" aria-hidden="true"></i> 15 Booking Request</li>
@@ -105,7 +127,18 @@
   <div class="col-sm-3 col-xl-3">
     <div class="card">
       <div class="card-body text-center">
-        <div class="card-category">120 Unit Standard Plan</div>
+        <div class="card-category">12 month Plan</div>
+        <div class="form-group row" data-select2-id="12">
+                                    <div class="col-md-12" data-select2-id="11">
+                                        <select class="select2 form-control custom-select select2-hidden-accessible" style="width: 100%; height:36px;" data-select2-id="1" tabindex="-1" aria-hidden="true">
+                                            <option data-select2-id="3">Select Unit</option>
+                                            <option value="AK" data-select2-id="17">3 Unit</option>
+                                            <option value="HI" data-select2-id="18">6 Unit</option>
+                                            <option value="HI" data-select2-id="18">12 Unit</option>
+                                            <option value="HI" data-select2-id="18">20 Unit</option>
+                                        </select>
+                                      </div>
+                                </div>
         <div class="display-6 my-4">₦ 72,000</div>
         <ul class="list-unstyled leading-loose">
           <li><i class="fa fa-check text-success mr-2" aria-hidden="true"></i> 120 Booking Request</li>

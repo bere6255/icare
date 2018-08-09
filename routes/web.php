@@ -14,6 +14,13 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/staff', function () {
+  $logf=[];
+    return view('admin.login',['logf'=>$logf]);
+});
+Route::get('/staff_index', function () {
+    return view('admin.landing');
+});
 Route::get('/logout', function () {
     Auth::logout();
     return redirect('/');
@@ -33,11 +40,13 @@ Route::get('/provider', 'providers@index')->name('provider');
 Route::get('/transaction_hys', 'providers@transac_hys');
 Route::get('/doctors_booking', 'providers@view_booking');
 Route::get('/doctors_chatroom', 'providers@chat_room');
-Route::get('/compose_message', 'providers@compose');
+Route::get('/seekers_details', 'providers@viewseek');
 Route::get('/d_profile', 'providers@profile');
-Route::post('/api/pro_mgs', 'providers@send_mail');
-Route::get('/doc_prescribtion', 'providers@prescrib');// pending change
+Route::get('/update_dprofile', 'providers@update_profile');
+Route::post('/update_dprofile', 'providers@post_profile');
+Route::get('/d_prescribtions', 'providers@prescrib');// pending change
 Route::post('/booking_accept', 'providers@booking_accept');
+Route::post('/prescrib0547', 'providers@post_prescrib');
 Route::post('/booking_reject', 'providers@booking_reject');
 //for seekers
 Route::get('/seekers_create', 'HomeController@create_seeker');
@@ -46,7 +55,18 @@ Route::get('/seekers_chatroom', 'seekersController@chat');
 Route::post('/bookings', 'seekersController@booking');
 Route::get('/seeker_viewbook', 'seekersController@view_booking');
 Route::get('/s_transec_hys', 'seekersController@transac_hys');
-Route::get('/load_provider', 'seekersController@provisers');
+Route::get('/load_provider', 'seekersController@providers');
 Route::get('/view_provider', 'seekersController@view_provider');
 Route::get('/s_prescribtions', 'seekersController@prescriptions');
 Route::get('/s_profile', 'seekersController@profile');
+Route::post('/update_sprofile', 'seekersController@update_profile');
+Route::get('/update_sprofile', 'seekersController@loadup_profile');
+//chat seeker_action
+Route::get('/loadchat','chat@loadchat');
+Route::get('/reload_chat','chat@reload');
+Route::get('/postchat','chat@post_chat');
+//admin / staff
+Route::post('/staff/login','adminController@loging');
+Route::get('/staff/dashboard','staffController@index');
+Route::get('/staff/provider','staffController@view_provider');
+Route::get('/staff/seekers','staffController@view_seeker');

@@ -6,7 +6,7 @@
   @include('s_d_navside.d_side')
 @endsection
 @section('content')
-  @include('d_s_page.compose')
+  @include('d_s_page.update_profile')
 @endsection
 @section('foot')
   @include('s_d_navside.footer')

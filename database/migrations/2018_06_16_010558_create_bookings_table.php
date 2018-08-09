@@ -22,6 +22,7 @@ class CreateBookingsTable extends Migration
             $table->string('reason');
             $table->string('note');
             $table->string('status');
+            $table->string('img');
             $table->string('seeker_action');
             $table->string('provider_action');
             $table->timestamps();

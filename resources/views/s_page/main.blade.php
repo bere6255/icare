@@ -13,7 +13,7 @@
   <div class="row row-cards row-deck">
     <div class="col-sm-6 col-xl-6">
       <div class="card">
-        <a href="#"><img class="card-img-top" src="/img/01.jpg" ></a>
+        <a href="#"><img class="card-img-top" src="/img/seeker.jpg"></a>
         <div class="card-body d-flex flex-column">
           <h4>Seekers</h4><a href="/seekers_create" class="btn btn-primary">Click here for Seeker</a>
           <div class="text-muted"></div>
@@ -29,7 +29,7 @@
 
     <div class="col-sm-6 col-xl-6">
       <div class="card">
-        <img class="card-img-top" src="/img/14.jpg" >
+        <img class="card-img-top" src="/img/Provider.jpg" >
         <div class="card-body d-flex flex-column">
           <h4>Providers</h4><a class="btn btn-warning" href="/provider_create">Click here to become a Provider</a>
           <div class="text-muted"></div>
@@ -73,7 +73,7 @@
     <div class="col-md-4 col-lg-4 col-xlg-3">
       <div class="card">
             <div class="card-body">
-              <a href="/s_transec_hys">  <h5 class="card-title m-b-0">Subcribtion Hystry</h5></a>
+              <a href="/s_transec_hys">  <h5 class="card-title m-b-0">Subcribtion History</h5></a>
             </div>
             <table class="table">
                   <thead>
@@ -141,7 +141,7 @@
                           <div class="btn-group">
                         <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</button>
                         <div class="dropdown-menu" x-placement="top-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, -204px, 0px);">
-                          <a class="dropdown-item text-primary" href="#">Prescribtion</a>
+                          <a class="dropdown-item text-primary" href="s_prescribtions?booking_id={{$bookings->request_ID}}">Prescribtion</a>
                           <a class="dropdown-item text-success" href="#">complated</a>
                         </div>
                           </div>
@@ -168,8 +168,10 @@
 
 @else
 
-  <div class="col-sm-6 col-xl-6 text-center">
-<div class="alert alert-success" role="alert">
+  <div class="col-sm-12 col-xl-12 text-center">
+    <div class="card">
+          <div class="card-body">
+<div role="alert">
     <h4 class="alert-heading">Hello there,welcome to Ecare.</h4>
     <p> Get the best medical advice at your convenience-anywhere you are, anytime you want.</p>
     <hr>
@@ -178,8 +180,10 @@
 
     <form method="post" enctype="form-data" action="/resend_activate" >
       {{ csrf_field() }}
-      <button class="btn btn-block badge-pill btn-primary">CLICK HERE TO RESEND</button>
+      <button class="btn badge-pill btn-primary">CLICK HERE TO RESEND</button>
     </form>
+</div>
+</div>
 </div>
 </div>
 @endif

@@ -16,9 +16,11 @@
                               <div class="card-body">
                                   <h4 class="card-title m-b-0">Booking Request</h4>
                               </div>
+                              <div class="table-responsive">
                               <table class="table">
-                                    <thead>
+                                    <thead class="thead-light">
                                       <tr>
+                                        <th scope="col">Image</th>
                                         <th scope="col">ID</th>
                                         <th scope="col">Name</th>
                                         <th scope="col">Reason</th>
@@ -27,11 +29,15 @@
                                         <th scope="col">Actions</th>
                                       </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody class="customtable">
                                       @if(count($booking)>0)
                                       {{$booking->links()}}
                                       @foreach($booking->all() as $bookings)
                                       <tr>
+                                        <td><div class="p-1">
+                                          <img src="{{Storage::url($bookings->img)}}" alt="user" width="50" class="rounded-circle">
+                                        </div>
+                                        </td>
                                         <td>{{$bookings->request_ID}}</td>
                                         <td>{{$bookings->name}}</td>
                                         <td>{{$bookings->reason}}</td>
@@ -63,8 +69,8 @@
                                         <button class="dropdown-item text-danger">Reject</button>
                                         </form>
                                         @else
-                                        <a class="dropdown-item text-primary" href="/doc_prescribtion">Prescrib</a>
-                                        <a class="dropdown-item text-secondry" href="#">View details</a>
+                                        <a class="dropdown-item text-primary" href="d_prescribtions?booking_id={{$bookings->request_ID}}">Prescrib</a>
+                                        <a class="dropdown-item text-secondry" href="/seekers_details?ID={{$bookings->request_ID}}">View details</a>
                                         <a class="dropdown-item text-success" href="#">complated</a>
                                         @endif
 
@@ -78,6 +84,7 @@
                                       @endif
                                     </tbody>
                               </table>
+                            </div>
 
       </div>
     </div>

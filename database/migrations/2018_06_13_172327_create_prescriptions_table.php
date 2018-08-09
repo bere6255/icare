@@ -15,6 +15,12 @@ class CreatePrescriptionsTable extends Migration
     {
         Schema::create('prescriptions', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('provider_email');
+            $table->string('seeker_mail');
+            $table->string('booking_id');
+            $table->string('examination');
+            $table->string('file_1');
+            $table->string('comment');
             $table->timestamps();
         });
     }

@@ -18,10 +18,10 @@ class CreateSeekersDetailsTable extends Migration
             $table->string('email');
             $table->string('users_id');
             $table->string('title');
-            $table->string('gender');
             $table->string('first_name');
             $table->string('last_name');
             $table->string('phone');
+            $table->string('gender');
             $table->string('blood_group');
             $table->string('genotype');
             $table->string('age');

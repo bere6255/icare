@@ -64,16 +64,16 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
       $vr_mail = str_random(30);
-      $_id = microtime().str_random(30);
+      $_id = str_random(30);
       $val_mail = array(
         'reg_mail' => $data['email'],
         'validate' => $vr_mail, );
         Mail::send('mails.validate', $val_mail, function ($message) use ($val_mail)
          {
-           $message->from('noreply@icare.com', 'iCare.LTD');
-           $message->sender('noreply@icare.com', 'iCare.LTD');
+           $message->from('hello@ecare.ng', 'Ecare.ng');
+           $message->sender('hello@ecare.ng', 'Ecare.ng');
            $message->to($val_mail['reg_mail'], $name = null);
-           $message->replyTo('noreply@icare.com', 'iCare.LTD');
+           $message->replyTo('hello@ecare.ng', 'Ecare.ng');
            $message->subject('Activate your acount to complate registration');
 
          });

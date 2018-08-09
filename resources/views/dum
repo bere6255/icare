@@ -1,3 +1,34 @@
+function submitchat(){
+  if (forml.uname.value=='' || forml.msg.value =='') {
+    alert('all fields are mandatory');
+  }
+  var uname = forml.uname.value;
+  var msg = forml.msg.value;
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function(){
+    if(xmlhttp.readyState==4&&xmlhttp.status==200){
+      document.getElementById('chatlogs').innerHTML = xmlhttp.responseText;
+    }
+  }
+  xmlhttp.open('GET','insert.php?uname='+uname+'&msg='+msg, true);
+  xmlhttp.send();
+}
+$(document).ready(function(e){
+  $.ajaxSetup({cache:false});
+  setInterval(function(){$('#chatlogs').load('log.php');}, 2000);
+});
+
+//for monthly plan
+850 to 1 min =3
+
+
+NewEcare2018
+
+
+
+
+Newpiggybank4749
+
 <div class="form-group row">
     <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 

@@ -16,7 +16,7 @@
                   <div class="col-lg-3 col-md-6">
                      <div class="card">
                          <div class="el-card-item">
-                             <div class="el-card-avatar el-overlay-1"><a href="/view_provider?id={{$provid->users_id}}" > <img src="../../assets/images/big/img1.jpg" alt="user" /></a>
+                             <div class="el-card-avatar el-overlay-1"><a href="/view_provider?id={{$provid->users_id}}" > <img src="{{Storage::url($provid->img)}}" alt="user" /></a>
 
                              </div>
                              <div class="el-card-content">

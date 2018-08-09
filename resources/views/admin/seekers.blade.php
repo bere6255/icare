@@ -1,0 +1,13 @@
+@extends('layouts.admin')
+@section('sidenav')
+  @include('admin_nav.nav')
+@endsection
+@section('header')
+  @include('admin_nav.header')
+@endsection
+@section('content')
+  @include('admin_s.seekers')
+@endsection
+@section('footer')
+  @include('admin_nav.footer')
+@endsection
