@@ -27,6 +27,13 @@ class adminController extends Controller
 
 
   }
-
+  public function log(){
+    $logf=[];
+    if (Auth::check()) {
+      return redirect('/staff/dashboard');
+    } else {
+      return view('admin.login',['logf'=>$logf]);
+    }
+  }
 
 }

@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,13 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/staff', function () {
-  $logf=[];
-    return view('admin.login',['logf'=>$logf]);
-});
-Route::get('/staff_index', function () {
-    return view('admin.landing');
-});
+Route::get('/staff','adminController@log');
 Route::get('/logout', function () {
     Auth::logout();
     return redirect('/');
@@ -70,3 +64,4 @@ Route::post('/staff/login','adminController@loging');
 Route::get('/staff/dashboard','staffController@index');
 Route::get('/staff/provider','staffController@view_provider');
 Route::get('/staff/seekers','staffController@view_seeker');
+Route::get('/staff/blog','staffController@blog');

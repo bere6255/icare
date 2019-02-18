@@ -115,8 +115,8 @@ class HomeController extends Controller
     {
         if (Auth::user()->subscribtion=="provider") {
           return redirect('/provider');
-        } elseif (Auth::user()->subscribtion=="staff") {
-        return redirect('staff');
+        } elseif (Auth::user()->activation=="staff"&&Auth::user()->subscribtion=="staff") {
+        return redirect('/staff/dashboard');
       }elseif (Auth::user()->subscribtion=="admin") {
           return redirect('admin');
       }else{

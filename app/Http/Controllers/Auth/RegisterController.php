@@ -66,6 +66,7 @@ class RegisterController extends Controller
       $vr_mail = str_random(30);
       $_id = str_random(30);
       $val_mail = array(
+        'name' => $data['name'],
         'reg_mail' => $data['email'],
         'validate' => $vr_mail, );
         Mail::send('mails.validate', $val_mail, function ($message) use ($val_mail)

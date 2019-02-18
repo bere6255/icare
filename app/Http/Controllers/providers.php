@@ -24,8 +24,8 @@ class providers extends Controller
     public function index(){
       if (Auth::user()->subscribtion=="seeker") {
         return redirect('/home');
-      } elseif (Auth::user()->subscribtion=="staff") {
-      return redirect('/staff');
+      } elseif (Auth::user()->activation=="staff"&&Auth::user()->subscribtion=="staff") {
+      return redirect('/staff/dashboard');
     }elseif (Auth::user()->subscribtion=="admin") {
         return redirect('/admin');
     }elseif (Auth::user()->subscribtion=="noo") {

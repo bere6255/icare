@@ -1,7 +1,7 @@
 <nav id="sidebar">
     <div class="sidebar-header">
         <h1>
-            <a href="/staff/dashboard">E-care</a>
+          <img src="../../img/icarelogo.png" width="70%" alt="Ecare" class="light-logo" />
         </h1>
         <span>M</span>
     </div>
@@ -42,7 +42,7 @@
             </a>
         </li>
         <li>
-            <a href="#">
+            <a href="/staff/blog">
                 <i class="far fa-window-restore"></i>
                 Blog
             </a>
